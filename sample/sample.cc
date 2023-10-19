@@ -10,15 +10,15 @@
 
 #include <G4RunManager.hh>
 #include <G4UImanager.hh>
-#ifdef G4VIS_USE
+//#ifdef G4VIS_USE
 #include <G4VisExecutive.hh>
-#endif
-#ifdef G4UI_USE
+//#endif
+//#ifdef G4UI_USE
 #include <G4UIExecutive.hh>
-#ifdef G4UI_USE_QT
+//#ifdef G4UI_USE_QT
 #include <G4UIQt.hh>
-#endif
-#endif
+// #endif
+// #endif
 
 #include "OpticalPhysicsList.hh"
 #include "DetectorConstruction.hh"
@@ -79,33 +79,33 @@ int main(int argc, char** argv) {
 	runManager->Initialize();
 	// Create visualization manager.
 	G4UImanager* uiManager = G4UImanager::GetUIpointer();
-#ifdef G4VIS_USE
+//#ifdef G4VIS_USE
 	G4VisManager* visManager = new G4VisExecutive;
 	visManager->Initialize();
-#endif
+//#endif
 	// Create UI manager.
-#ifdef G4UI_USE
+//#ifdef G4UI_USE
 	uiManager = G4UImanager::GetUIpointer();
 	// Batch mode.
 	if (vm.count("mac")) {
 		uiManager->ApplyCommand((G4String("/control/execute ") + vm["mac"].as<std::string>()));
-	} else {
+	}// else {
 		// Interactive mode.
-#ifdef G4UI_USE_QT
-		// Create Qt UI.
+// #ifdef G4UI_USE_QT
+// 		// Create Qt UI.
 		G4UIQt* ui = new G4UIQt(argc, argv);
 		uiManager->ApplyCommand("/control/execute vis-qt.mac");
 		ui->SessionStart();
 		delete ui;
-#else
-		// Create default UI.
-		G4UIExecutive * ui = new G4UIExecutive(argc, argv);
-		uiManager->ApplyCommand("/control/execute vis.mac");
-		ui->SessionStart();
-		delete ui;
-#endif
-	}
-#endif
+// #else
+// 		// Create default UI.
+// 		G4UIExecutive * ui = new G4UIExecutive(argc, argv);
+// 		uiManager->ApplyCommand("/control/execute vis.mac");
+// 		ui->SessionStart();
+// 		delete ui;
+// #endif
+// 	}
+// #endif
 	// Tear down.
 	delete runManager;
 	return 0;

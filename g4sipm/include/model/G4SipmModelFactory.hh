@@ -63,6 +63,6 @@ public:
 	 * @return G4SipmModel - the HamamatsuS12573100X SiPM model.
 	 */
 	G4SipmModel* createHamamatsuS12573100X() const;
-};
+	};
 
 #endif /* G4SIPMMODELFACTORY_HH_ */

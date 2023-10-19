@@ -21,6 +21,8 @@
 #include <iostream>
 #include <fstream>
 
+#include <unistd.h>
+
 Properties::Properties() {
 	std::string spacePattern = "[[:space:]]*";
 	std::string stringPattern = "([a-zA-Z0-9_-]+)";
@@ -152,6 +154,14 @@ bool Properties::load(std::string _filename) {
 	// Open the file.
 	std::ifstream in(_filename.c_str());
 	if (!in.is_open()) {
+
+		char currentDir[PATH_MAX]; // PATH_MAX est une constante définie dans <limits.h> qui donne la longueur maximale du chemin.
+if (getcwd(currentDir, sizeof(currentDir)) != NULL) {
+    G4cout << "Current Working Directory: " << currentDir << G4endl;
+} else {
+    G4cout << "Error getting current working directory." << G4endl;
+}
+
 		std::cerr << "Properties::load(filename = \"" << _filename << "\"): can not open file." << std::endl;
 		return false;
 	}

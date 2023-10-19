@@ -21,6 +21,7 @@ private:
 	G4Material* copper;
 	G4Material* epoxy;
 	G4Material* silicon;
+	G4Material* glass;
 
 	/**
 	 * Hidden constructor.
@@ -57,6 +58,11 @@ public:
 	 * @return G4Material - epoxy.
 	 */
 	G4Material* getEpoxy();
+
+	/**
+	 * @return G4Material - glass.
+	 */
+	G4Material* getGlass();
 
 	/**
 	 * @return G4Material - silicon.

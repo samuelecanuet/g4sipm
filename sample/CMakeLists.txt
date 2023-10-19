@@ -25,12 +25,14 @@ set(sources ${sources} "${PROJECT_SOURCE_DIR}/src/persistency/PersistencyHandler
     "${PROJECT_SOURCE_DIR}/src/persistency/PersistencyHandlerMessenger.cc" 
     "${PROJECT_SOURCE_DIR}/src/persistency/PersistVisitor.cc" 
     "${PROJECT_SOURCE_DIR}/src/persistency/PersistVisitorFactory.cc" 
-    "${PROJECT_SOURCE_DIR}/src/persistency/JsonPersistVisitor.cc")
+    "${PROJECT_SOURCE_DIR}/src/persistency/JsonPersistVisitor.cc"
+    "${PROJECT_SOURCE_DIR}/src/persistency/RootPersistVisitor.cc")
 set(headers ${headers} "${PROJECT_SOURCE_DIR}/include/persistency/PersistencyHandler.hh" 
     "${PROJECT_SOURCE_DIR}/include/persistency/PersistencyHandlerMessenger.hh" 
     "${PROJECT_SOURCE_DIR}/include/persistency/PersistVisitor.hh" 
     "${PROJECT_SOURCE_DIR}/include/persistency/PersistVisitorFactory.hh" 
-    "${PROJECT_SOURCE_DIR}/include/persistency/JsonPersistVisitor.hh")
+    "${PROJECT_SOURCE_DIR}/include/persistency/JsonPersistVisitor.hh"
+    "${PROJECT_SOURCE_DIR}/include/persistency/RootPersistVisitor.hh")
     
 if(WITH_ROOT)
     set(sources ${sources} "${PROJECT_SOURCE_DIR}/src/persistency/RootPersistVisitor.cc")

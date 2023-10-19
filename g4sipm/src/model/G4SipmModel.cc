@@ -99,7 +99,7 @@ G4Material* G4SipmModel::getMaterial() const {
 }
 
 G4Material* G4SipmModel::getWindowMaterial() const {
-	return MaterialFactory::getInstance()->getEpoxy();
+	return MaterialFactory::getInstance()->getGlass();
 }
 
 double G4SipmModel::getTemperature() const {

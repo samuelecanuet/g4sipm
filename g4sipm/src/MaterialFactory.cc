@@ -90,6 +90,44 @@ G4Material* MaterialFactory::getEpoxy() {
 	return epoxy;
 }
 
+G4Material* MaterialFactory::getGlass() {
+	if (epoxy == NULL) {
+		// Create Glass
+		glass = G4NistManager::Instance()->FindOrBuildMaterial("G4_GLASS_PLATE");
+
+		const double B1 = 1.03961212;
+		const double B2 = 0.231792344;
+		const double B3 = 1.01046945;
+		const double C1 = 6.00069867e-3 * (CLHEP::um * CLHEP::um);
+		const double C2 = 2.00179144e-2 * (CLHEP::um * CLHEP::um);
+		const double C3 = 1.03560653e2 * (CLHEP::um * CLHEP::um);
+
+		std::vector<double> energy;
+		std::vector<double> refractiveIndex;
+		double wavelength;
+
+		for (LAMBDA_MIN; wavelength <= LAMBDA_MAX; wavelength += 10.0)
+		{
+			// Convertissez la longueur d'onde en énergie en utilisant E=hc/λ
+			double photonEnergy = (CLHEP::h_Planck * CLHEP::c_light / (wavelength * CLHEP::nm));
+
+			// Calculez l'indice de réfraction en utilisant la loi de Sellmeier
+			double n = sqrt(1 + B1 * pow(wavelength, 2) / (pow(wavelength, 2) - C1) +
+							B2 * pow(wavelength, 2) / (pow(wavelength, 2) - C2) +
+							B3 * pow(wavelength, 2) / (pow(wavelength, 2) - C3));
+
+			// Ajoutez l'énergie et l'indice de réfraction à leurs listes respectives
+			energy.push_back(photonEnergy);
+			refractiveIndex.push_back(n);
+		}
+		// Set material properties table.
+		G4MaterialPropertiesTable *mpt = new G4MaterialPropertiesTable();
+		mpt->AddProperty("RINDEX", &energy[0], &refractiveIndex[0], energy.size());
+		glass->SetMaterialPropertiesTable(mpt);
+	}
+	return glass;
+}
+
 G4Material* MaterialFactory::getSilicon() {
 	if (silicon == NULL) {
 		silicon = G4NistManager::Instance()->FindOrBuildMaterial("G4_Si");

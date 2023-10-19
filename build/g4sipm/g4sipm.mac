@@ -1,0 +1,12 @@
+/g4sipm/verbose 3
+/g4sipm/filter/geometry 0
+/g4sipm/filter/pde 0
+/g4sipm/filter/timing 0
+/g4sipm/noise/thermal 0
+/g4sipm/noise/preThermal 12
+/g4sipm/noise/postThermal 12
+/g4sipm/noise/afterpulse 0
+/g4sipm/noise/crosstalk 0
+/g4sipm/noise/ifNoSignal 1
+/g4sipm/digitize/hits 0
+/g4sipm/digitize/trace 0

@@ -22,7 +22,8 @@
  */
 class DetectorConstruction: public G4VUserDetectorConstruction {
 private:
-	G4SipmHousing* housing;
+	G4SipmHousing* housing1;
+	G4SipmHousing* housing2;
 	/**
 	 * @param name - the name of the model.
 	 * @return G4SipmModel - the new instance.

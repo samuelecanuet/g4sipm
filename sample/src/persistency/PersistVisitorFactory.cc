@@ -10,9 +10,9 @@
 
 #include <boost/algorithm/string.hpp>
 
-#ifdef WITH_ROOT
+//#ifdef WITH_ROOT
 #include "persistency/RootPersistVisitor.hh"
-#endif
+//#endif
 #ifdef WITH_SQLITE
 #include "persistency/SqlitePersistVisitor.hh"
 #endif
@@ -31,15 +31,15 @@ PersistVisitorFactory* PersistVisitorFactory::getInstance() {
 }
 
 PersistVisitor* PersistVisitorFactory::create(std::string filename) {
-#ifdef WITH_ROOT
+//#ifdef WITH_ROOT
 	if(boost::algorithm::ends_with(filename, "root")) {
 		return new RootPersistVisitor;
 	}
-#endif
+//#endif
 #ifdef WITH_SQLITE
 	if(boost::algorithm::ends_with(filename, "sqlite")) {
 		return new SqlitePersistVisitor;
 	}
 #endif
-	return new JsonPersistVisitor;
+	return new RootPersistVisitor;
 }

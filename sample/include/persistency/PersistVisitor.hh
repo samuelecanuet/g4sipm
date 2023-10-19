@@ -6,6 +6,7 @@
  * @copyright GNU General Public License v3.0
  */
 
+
 #ifndef PERSISTENCY_PERSISTVISITOR_HH_
 #define PERSISTENCY_PERSISTVISITOR_HH_
 

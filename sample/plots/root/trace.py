@@ -9,7 +9,7 @@ from ROOT import TFile, TTree
 millivolt = 1e-9
 		
 if __name__ == "__main__":
-	filename = glob.glob('results/*.root')[-1]
+	filename = glob.glob('../../results/*.root')[-1]
 	if len(sys.argv) > 1:
 		filename = sys.argv[1]
 	# Plot range from arguments
@@ -26,7 +26,7 @@ if __name__ == "__main__":
 	# Extract trace.
 	voltages = []
 	times = []
-	for i in xrange(digi.GetEntries()):
+	for i in range(digi.GetEntries()):
 		digi.GetEntry(i)
 		if digi.time >= start and digi.time <= stop:
 			voltages.append(digi.voltage / millivolt)
