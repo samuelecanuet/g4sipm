@@ -26,9 +26,30 @@ class G4SipmModel {
 private:
 	double biasVoltage;
 	double temperature;
+	double thickness;
 
-	G4SipmGainMapModel* gainMapModel;
-	G4SipmVoltageTraceModel* voltageTraceModel;
+	G4SipmGainMapModel *gainMapModel;
+	G4SipmVoltageTraceModel *voltageTraceModel;
+	
+
+	struct DeadZone
+	{
+		double x;
+		double y;
+		double size_x;
+		double size_y;
+	};
+
+	struct DeadZoneiD
+	{
+		double cell_x;
+		double cell_y;
+	};
+
+	/// Only for Sensl-MicroFJ-60035-TSV
+	std::vector<DeadZone> deadZones = {
+		{10, 0, 3, 3}, {35, 0, 3, 3}, {60, 0, 3, 3}, {85, 0, 3, 3}, {112, 0, 3, 3}, {137, 0, 3, 3}, {0, 74, 4, 4}, {10, 74, 3, 4}, {35, 74, 3, 4}, {60, 74, 3, 4}, {85, 74, 3, 4}, {112, 74, 3, 4}, {137, 74, 3, 4}, {147, 74, 3, 4}, {10, 147, 3, 3}, {35, 147, 3, 3}, {60, 147, 3, 3}, {85, 147, 3, 3}, {112, 147, 3, 3}, {137, 147, 3, 3}};
+	std::vector<DeadZoneiD> deadZoneiD = {};
 
 	/**
 	 * @return G4SipmCellId - an invalid id.

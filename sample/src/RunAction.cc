@@ -36,8 +36,11 @@ void RunAction::EndOfRunAction(const G4Run*) {
 	// Get detector.
 	const DetectorConstruction* detector =
 			(const DetectorConstruction*) G4RunManager::GetRunManager()->GetUserDetectorConstruction();
-	persistencyHandler->persist(detector->getSipmHousing()->getSipm()->getModel());
-	persistencyHandler->persist(detector->getSipmHousing()->getSipm()->getModel()->getVoltageTraceModel());
+	for (int i=0; i<9; i++)
+		{
+	persistencyHandler->persist(detector->getSipmHousing(i)->getSipm()->getModel());
+	persistencyHandler->persist(detector->getSipmHousing(i)->getSipm()->getModel()->getVoltageTraceModel());
+		}
 	// Close output.
 	persistencyHandler->close();
 	timer.Stop();

@@ -40,28 +40,36 @@ int main(int argc, char** argv) {
 	("mac", po::value<std::string>(), "Macro input file.") //
 	("output", po::value<std::string>()->default_value("./results"),
 			"Output directory (automatically appends timestamp to filename) or filename (./results).") //
-	("model", po::value<std::string>()->default_value("HamamatsuS1036211100"),
+	("model", po::value<std::string>()->default_value("resources/sensl-microfj-60035-tsv.properties"),
 			"The SiPM model name or path to .properties file.") //
 	("housing", po::value<std::string>()->default_value("default"),
 			"The SiPM housing type ('ceramic', 'smd', 'default'.") //,
 	("temperature", po::value<double>(), "override the models default temperature setting") //
-	("bias-voltage", po::value<double>(), "override the models default bias voltage");
+	("bias-voltage", po::value<double>(), "override the models default bias voltage")
+	("plastic", po::value<bool>()->default_value(false), "true/false to use a EJ200 plastic Scintillator");
 	po::variables_map vm = ProgramOptionsUtil::parse(argc, argv, desc, true);
 	if (vm.count("help")) {
 		std::cout << desc << std::endl;
 		return 0;
 	}
+	int i=0;
 	// Construct the run manager.
 	G4RunManager* runManager = new G4RunManager();
 	// Set mandatory initialization classes.
 	DetectorConstruction* detectorConstruction = new DetectorConstruction(vm["model"].as<std::string>(),
-			vm["housing"].as<std::string>());
+			vm["housing"].as<std::string>(), vm["plastic"].as<bool>());
 	if (vm.count("temperature")) {
-		detectorConstruction->getSipmModel()->setTemperature(
+		for (int i=0; i<9; i++)
+		{
+		detectorConstruction->getSipmModel(i)->setTemperature(
 				vm["temperature"].as<double>() * CLHEP::kelvin + CLHEP::STP_Temperature);
+		}
 	}
 	if (vm.count("bias-voltage")) {
-		detectorConstruction->getSipmModel()->setBiasVoltage(vm["bias-voltage"].as<double>() * CLHEP::volt);
+		for (int i=0; i<9; i++)
+		{
+		detectorConstruction->getSipmModel(i)->setBiasVoltage(vm["bias-voltage"].as<double>() * CLHEP::volt);
+		}
 	}
 	runManager->SetUserInitialization(detectorConstruction);
 	// Deactivate all irrelevant processes.

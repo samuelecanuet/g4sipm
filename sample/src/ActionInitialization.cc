@@ -49,8 +49,13 @@ void ActionInitialization::Build() const {
 	const DetectorConstruction* detector =
 			(const DetectorConstruction*) G4RunManager::GetRunManager()->GetUserDetectorConstruction();
 	// Set plane type and position to match SiPM.
-	ParticleSourceMessenger::getInstance()->setA(detector->getSipmModel()->getPitch());
-	ParticleSourceMessenger::getInstance()->setB(detector->getSipmModel()->getPitch());
+	
+	for (int i=0; i<1; i++)
+		{
+	ParticleSourceMessenger::getInstance()->setA(detector->getSipmModel(i)->getPitch());
+	ParticleSourceMessenger::getInstance()->setB(detector->getSipmModel(i)->getPitch());
 	const double surfaceTolerance = G4GeometryTolerance::GetInstance()->GetSurfaceTolerance();
 	ParticleSourceMessenger::getInstance()->setPos(G4ThreeVector(0, 0, 10. * surfaceTolerance));
+		}
+	
 }

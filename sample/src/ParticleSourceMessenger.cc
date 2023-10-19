@@ -204,6 +204,10 @@ void ParticleSourceMessenger::parseProgramOptions(int argc, char** argv) {
 	}
 	setNewValueIfArgumentGiven(vm, "planeA", &a, mm);
 	setNewValueIfArgumentGiven(vm, "planeB", &b, mm);
+
+	setA(20);
+	setB(20);
+
 	if (vm.count("posX") && vm.count("posY") && vm.count("posZ")) {
 		double x = vm["posX"].as<double>() * mm;
 		double y = vm["posY"].as<double>() * mm;

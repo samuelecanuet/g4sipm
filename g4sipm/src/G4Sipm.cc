@@ -17,7 +17,7 @@
 #include "digi/G4SipmDigitizer.hh"
 #include "digi/G4SipmVoltageTraceDigitizer.hh"
 
-G4SipmId G4Sipm::LAST_ID = 0;
+G4SipmId G4Sipm::LAST_ID = 1;
 
 G4Sipm::G4Sipm(G4SipmModel* _model) :
 		Placeable(), model(_model) {

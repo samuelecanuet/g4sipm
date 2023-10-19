@@ -57,6 +57,7 @@ void G4SipmConfigFileModel::initialize() {
 	afterPulseTauLong = p.getTabular("operatingParameters")["afterPulseTauLong"];
 	afterPulseTauShort = p.getTabular("operatingParameters")["afterPulseTauShort"];
 	recoveryTime = p.getTabular("operatingParameters")["recoveryTime"];
+
 	// Sanity check.
 	if (temperature.size() == 0) {
 		std::cerr << "G4SipmConfigFileModel::initialize(): no operating points found." << std::endl;
@@ -120,15 +121,7 @@ void G4SipmConfigFileModel::initializePde() {
 }
 
 void G4SipmConfigFileModel::initializeWindowMaterial() {
-	windowMaterial = new G4Material(boost::str(boost::format("%s-windowMaterial") % getName()),
-			1.0 * CLHEP::g / CLHEP::cm3, MaterialFactory::getInstance()->getEpoxy());
-	double energies[] = { 1 * CLHEP::eV, 10 * CLHEP::eV };
-	double rindex = p.getNumber("windowRefractiveIndex");
-	double indices[] = { rindex, rindex };
-	// Set material properties table.
-	G4MaterialPropertiesTable* mpt = new G4MaterialPropertiesTable();
-	mpt->AddProperty("RINDEX", energies, indices, 2);
-	windowMaterial->SetMaterialPropertiesTable(mpt);
+	windowMaterial = MaterialFactory::getInstance()->getGlass();
 }
 
 void G4SipmConfigFileModel::updateOperatingPoint() {

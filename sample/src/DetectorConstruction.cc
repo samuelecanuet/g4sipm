@@ -9,6 +9,7 @@
 #include "DetectorConstruction.hh"
 
 #include <G4Box.hh>
+#include <G4Tubs.hh>
 #include <G4VisAttributes.hh>
 #include <G4PVPlacement.hh>
 
@@ -19,19 +20,27 @@
 #include "housing/impl/HamamatsuCeramicHousing.hh"
 #include "housing/impl/HamamatsuSmdHousing.hh"
 
-DetectorConstruction::DetectorConstruction(std::string sipmModelName, std::string housingName) :
+#include "G4RunManager.hh"
+
+DetectorConstruction::DetectorConstruction(std::string sipmModelName, std::string housingName, G4bool pl_condition) :
 		G4VUserDetectorConstruction() {
 	// Create SiPM and housing.
-	G4SipmModel* model1 = createSipmModel(sipmModelName);
-	housing1 = createHousing(housingName, new G4Sipm(model1));
+	
+	for (int i=0; i<9; i++)
+	{
+		SiPMs[i] = createSipmModel(sipmModelName);
+		SiPMs_Housing[i] = createHousing(housingName, new G4Sipm(SiPMs[i]));
+	}	
+	Condition=pl_condition;
 
-	G4SipmModel* model2 = createSipmModel(sipmModelName);
-	housing2 = createHousing(housingName, new G4Sipm(model2));
 }
 
 DetectorConstruction::~DetectorConstruction() {
-	delete housing1;
-	delete housing2;
+	for (int i=0; i<9; i++)
+	{
+		delete SiPMs_Housing[i];
+	}
+	
 }
 
 G4SipmModel* DetectorConstruction::createSipmModel(std::string name) const {
@@ -81,23 +90,69 @@ G4VPhysicalVolume* DetectorConstruction::Construct() {
 	G4ThreeVector worldDimension = G4ThreeVector(1. * CLHEP::m, 1. * CLHEP::m, 1. * CLHEP::m);
 	// Create world volume.
 	G4Box* world = new G4Box("world", worldDimension.x(), worldDimension.y(), worldDimension.z());
-	G4LogicalVolume* worldLv = new G4LogicalVolume(world, MaterialFactory::getInstance()->getAir(), "worldLv", NULL,
+	G4LogicalVolume* worldLv = new G4LogicalVolume(world, MaterialFactory::getInstance()->getVacuum(), "worldLv", NULL,
 	NULL, NULL);
 	//worldLv->SetVisAttributes(G4VisAttributes::Invisible);
 	worldLv->SetVisAttributes(G4VisAttributes::GetInvisible());
 	G4VPhysicalVolume* worldPv = new G4PVPlacement(NULL, G4ThreeVector(), worldLv, "worldPv", NULL, false, 0);
-	// Set the entrance window surface of the SiPM to (0,0,0).
-	housing->setPosition(G4ThreeVector(0., 0., -housing->getDz() / 2.));
-	// Build SiPM.
-	housing->buildAndPlace(worldPv);
-	//
+	
+	
+
+	// add pcb 
+	
+	G4double fLength_PlasticScintillator = 0;
+	if (Condition)
+	{
+		// add grease and wrapping with teflon and copper/steal?
+
+
+		fLength_PlasticScintillator = 5 * CLHEP::cm;
+		G4double fRadius_PlasticScintillator = 1.5 * CLHEP::cm;
+
+		G4Tubs *fSolid_PlasticScintillator = new G4Tubs("PlasticScintillator", 0., fRadius_PlasticScintillator, 0.5 * fLength_PlasticScintillator, 0., 360 * CLHEP::deg); // name, r : 0->1cm, L : 5cm, phi : 0->2pi
+		G4LogicalVolume *fLogic_PlasticScintillator = new G4LogicalVolume(fSolid_PlasticScintillator, MaterialFactory::getInstance()->getEJ200(), "PlasticScintillator"); // solid, material, name
+		G4PVPlacement *fPhys_PlasticScintillator = new G4PVPlacement(0,																									  // rotationMatrix
+																	 G4ThreeVector(0., 0., fLength_PlasticScintillator / 2),											  // position
+																	 fLogic_PlasticScintillator, "PlasticScintillator",													  // its fLogical volume
+																	 worldLv,																							  // its mother volume
+																	 false,																								  // no boolean op.
+																	 0);
+
+		G4VisAttributes *PlasticScintillator_att = new G4VisAttributes(G4Colour(0.1, 0.1, 0.1, 0.2)); // red
+		PlasticScintillator_att->SetForceWireframe(true);
+		PlasticScintillator_att->SetForceSolid(true);
+		fLogic_PlasticScintillator->SetVisAttributes(PlasticScintillator_att);
+	}
+
+
+	G4double SiPMSpacing = 6.75 * CLHEP::mm;
+	G4RotationMatrix* myRotation_trSupp = new G4RotationMatrix();
+    myRotation_trSupp->rotateX(0.*CLHEP::deg);
+    myRotation_trSupp->rotateY(180.*CLHEP::deg);
+    myRotation_trSupp->rotateZ(0.*CLHEP::rad);
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			G4double x = (i-1) * SiPMSpacing;
+			G4double y = (j-1) * SiPMSpacing;
+
+			SiPMs_Housing[i * 3 + j]->setPosition(G4ThreeVector(x, y, fLength_PlasticScintillator + SiPMs_Housing[i]->getPackageDz() / 2));
+			SiPMs_Housing[i * 3 + j]->setRotation(myRotation_trSupp);
+			SiPMs_Housing[i * 3 + j]->buildAndPlace(worldPv);
+		}
+	}
+
+
 	return worldPv;
+
 }
 
-G4SipmModel* DetectorConstruction::getSipmModel() const {
-	return housing->getSipm()->getModel();
+G4SipmModel* DetectorConstruction::getSipmModel(int i) const {
+	return SiPMs_Housing[i]->getSipm()->getModel();
 }
 
-G4SipmHousing* DetectorConstruction::getSipmHousing() const {
-	return housing;
+G4SipmHousing* DetectorConstruction::getSipmHousing(int i) const {
+	return SiPMs_Housing[i];
 }

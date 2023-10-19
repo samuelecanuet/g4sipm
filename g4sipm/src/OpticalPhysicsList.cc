@@ -40,6 +40,7 @@ void OpticalPhysicsList::ConstructParticle() {
 
 void OpticalPhysicsList::SetCuts() {
 	SetCutsWithDefault();
+
 	if (this->verboseLevel > 0) {
 		DumpCutValuesTable();
 	}

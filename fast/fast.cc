@@ -60,18 +60,24 @@ int main(int argc, char** argv) {
 	DetectorConstruction* detectorConstruction = new DetectorConstruction(vm["model"].as<std::string>(),
 			vm["housing"].as<std::string>());
 	if (vm.count("bias-voltage")) {
-		detectorConstruction->getSipmModel()->setBiasVoltage(vm["bias-voltage"].as<double>() * CLHEP::volt);
-		std::cout << "bias voltage = " << detectorConstruction->getSipmModel()->getBiasVoltage() / CLHEP::volt
+		for (int i=0; i<9 i++)
+		{
+					detectorConstruction->getSipmModel(i)->setBiasVoltage(vm["bias-voltage"].as<double>() * CLHEP::volt);
+		std::cout << "bias voltage = " << detectorConstruction->getSipmModel(i)->getBiasVoltage() / CLHEP::volt
 				<< std::endl;
-		std::cout << "breakdown voltage = " << detectorConstruction->getSipmModel()->getBreakdownVoltage() / CLHEP::volt
+		std::cout << "breakdown voltage = " << detectorConstruction->getSipmModel(i)->getBreakdownVoltage() / CLHEP::volt
 				<< std::endl;
-		std::cout << "over voltage = " << detectorConstruction->getSipmModel()->getOverVoltage() / CLHEP::volt
+		std::cout << "over voltage = " << detectorConstruction->getSipmModel(i)->getOverVoltage() / CLHEP::volt
 				<< std::endl;
+		}
 	}
 	if (vm.count("temperature")) {
-		detectorConstruction->getSipmModel()->setTemperature(
+		for (int i=0; i<9 i++)
+		{
+		detectorConstruction->getSipmModel(i)->setTemperature(
 				vm["temperature"].as<double>() * CLHEP::kelvin + CLHEP::STP_Temperature);
 		std::cout << "temperature = " << vm["temperature"].as<double>() << " Celsius" << std::endl;
+		}
 	}
 	runManager->SetUserInitialization(detectorConstruction);
 	// Deactivate all irrelevant processes.

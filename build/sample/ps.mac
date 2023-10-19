@@ -8,8 +8,8 @@
 
 #
 # Particle energy range
-/ps/energy/eMin 3.5424049 eV # 350 nm
-/ps/energy/eMax 3.5424049 eV # 350 nm
+/ps/energy/eMin 2.92 eV # 350 nm
+/ps/energy/eMax 2.92 eV # 350 nm
 
 #
 # Particle source plane position.
@@ -21,21 +21,21 @@
 
 #
 # Pitch of the rectangular plane.
-/ps/plane/a 1 mm
-/ps/plane/b 1 mm
+/ps/plane/a 100 mm
+/ps/plane/b 100 mm
 
 #
 # Angular distribution of the particle directions.
 /ps/angle/thetaMin 0 deg
-/ps/angle/thetaMax 0 deg
+/ps/angle/thetaMax 180 deg
 /ps/angle/phiMin 0 deg
-/ps/angle/phiMax 0 deg
+/ps/angle/phiMax 180 deg
 
 #
 # Time range of particles.
 /ps/tMin 0 s
-/ps/tMax 1e4 ns 
+/ps/tMax 1e2 ns 
 
 #
 # Number of particles.
-/ps/nParticles 10
+/ps/nParticles 1000000

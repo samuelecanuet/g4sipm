@@ -22,8 +22,10 @@
  */
 class DetectorConstruction: public G4VUserDetectorConstruction {
 private:
-	G4SipmHousing* housing1;
-	G4SipmHousing* housing2;
+	G4SipmHousing* SiPMs_Housing[9]={};
+	G4SipmModel* SiPMs[9]={};
+	G4bool Condition;
+
 	/**
 	 * @param name - the name of the model.
 	 * @return G4SipmModel - the new instance.
@@ -43,19 +45,20 @@ public:
 	 * @param modelName - the model name (see G4SipmModelFactory).
 	 * @param housingName - the name of the housing ("ceramic", "smd", "plain").
 	 */
-	DetectorConstruction(std::string modelName, std::string housingName);
+	DetectorConstruction(std::string modelName, std::string housingName, G4bool pl_condition);
 	virtual ~DetectorConstruction();
 
 	G4VPhysicalVolume* Construct();
-
 	/**
 	 * @return G4SipmModel - the SiPM model.
 	 */
-	G4SipmModel* getSipmModel() const;
+	G4SipmModel* getSipmModel(int i) const;
 	/**
 	 * @return G4SipmHousing - the housing instance.
 	 */
-	G4SipmHousing* getSipmHousing() const;
+	G4SipmHousing* getSipmHousing(int i) const;
+
+	//void SetPlasticScintillator();
 
 };
 

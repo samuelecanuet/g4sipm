@@ -22,6 +22,8 @@ private:
 	G4Material* epoxy;
 	G4Material* silicon;
 	G4Material* glass;
+	G4Material* vacuum;
+	G4Material* pl;
 
 	/**
 	 * Hidden constructor.
@@ -38,6 +40,11 @@ public:
 	 * @return MaterialFactory - the singleton.
 	 */
 	static MaterialFactory* getInstance();
+
+	/**
+	 * @return G4Material - vacuum.
+	 */
+	G4Material* getVacuum();
 
 	/**
 	 * @return G4Material - air.
@@ -68,6 +75,11 @@ public:
 	 * @return G4Material - silicon.
 	 */
 	G4Material* getSilicon();
+
+	/**
+	 * @return G4Material - plastic for EJ200.
+	 */
+	G4Material* getEJ200();
 };
 
 #endif /* MATERIALFACTORY_HH_ */

@@ -9,7 +9,7 @@
 /vis/viewer/set/background white
 /vis/viewer/flush
 /vis/scene/add/axes -.5 -.5 -0.3 1 mm
-/vis/viewer/set/viewpointThetaPhi 45 30 deg
+/vis/viewer/set/viewpointThetaPhi 180. 0.
 
 # Trajectory drawing.
 # /tracking/storeTrajectory 1

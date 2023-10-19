@@ -14,7 +14,7 @@
 
 #include "VectorUtil.hh"
 
-double MaterialFactory::LAMBDA_MIN = 100 * CLHEP::nm;
+double MaterialFactory::LAMBDA_MIN = 200 * CLHEP::nm;
 double MaterialFactory::LAMBDA_MAX = 3000 * CLHEP::nm;
 
 MaterialFactory::MaterialFactory() {
@@ -23,6 +23,7 @@ MaterialFactory::MaterialFactory() {
 	copper = NULL;
 	epoxy = NULL;
 	silicon = NULL;
+	glass = NULL;
 }
 
 MaterialFactory::~MaterialFactory() {
@@ -31,11 +32,61 @@ MaterialFactory::~MaterialFactory() {
 	delete copper;
 	delete epoxy;
 	delete silicon;
+	delete glass;
 }
 
 MaterialFactory* MaterialFactory::getInstance() {
 	static MaterialFactory* instance = new MaterialFactory;
 	return instance;
+}
+
+G4Material* MaterialFactory::getVacuum() {
+	vacuum = G4NistManager::Instance()->FindOrBuildMaterial("G4_Galactic");
+	return vacuum;
+}
+
+G4Material *MaterialFactory::getEJ200() {
+	pl = G4NistManager::Instance()->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
+	
+	std::vector<G4double> wavelenght_sc = {
+		380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395,
+		396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411,
+		412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427,
+		428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443,
+		444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459,
+		460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475,
+		476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491,
+		492, 493, 494, 495, 496, 497, 498, 499};
+	std::vector<G4double> energy_sc;
+	for (unsigned long int i=1; i <= wavelenght_sc.size(); i++)
+	{
+		energy_sc.push_back(CLHEP::h_Planck * CLHEP::c_light / (wavelenght_sc[wavelenght_sc.size()-i] * CLHEP::nm));
+	}
+
+	std::vector<G4double> sc = {
+		0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0010989, 0.0021978, 0.0032967, 0.0043956, 0.00549451,
+		0.00659341, 0.00769231, 0.00879121, 0.00989011, 0.01098901, 0.01831502, 0.02564103, 0.03296703, 0.04599686, 0.07613815,
+		0.10686813, 0.14642857, 0.17956044, 0.21355311, 0.25457875, 0.29835165, 0.3467033, 0.39505495, 0.46648352, 0.53479853,
+		0.60934066, 0.67948718, 0.74395604, 0.81208791, 0.86813187, 0.92564103, 0.96428571, 0.98626374, 0.99413919, 1.0,
+		0.99497645, 0.9899529, 0.98008242, 0.96909341, 0.95673077, 0.94134615, 0.92596154, 0.90879121, 0.89120879, 0.87362637,
+		0.85604396, 0.82791209, 0.7978022, 0.77435897, 0.75091575, 0.72747253, 0.70467033, 0.68269231, 0.66071429, 0.63873626,
+		0.61675824, 0.5974026, 0.58141858, 0.56543457, 0.54945055, 0.53506494, 0.52067932, 0.50629371, 0.49293564, 0.48037677,
+		0.4678179, 0.45525903, 0.44381868, 0.43722527, 0.43063187, 0.42252747, 0.41373626, 0.40494505, 0.39390609, 0.38111888,
+		0.36833167, 0.35516484, 0.33934066, 0.32351648, 0.30769231, 0.28815629, 0.26862027, 0.25027473, 0.23708791, 0.2239011,
+		0.21071429, 0.1990232, 0.18925519, 0.17948718, 0.17032967, 0.16153846, 0.15274725, 0.14395604, 0.13571429, 0.12912088,
+		0.12252747, 0.11608392, 0.10969031, 0.1032967, 0.09752747, 0.09313187, 0.08873626, 0.08434066, 0.07994505, 0.07554945,
+		0.07115385, 0.06675824, 0.06236264, 0.05796703};
+
+	G4MaterialPropertiesTable *pl_propreties = new G4MaterialPropertiesTable();
+	pl_propreties->AddConstProperty("RINDEX", 1.58, true);
+	pl_propreties->AddConstProperty("ABSLENGTH", 380 * CLHEP::cm, true);
+	pl_propreties->AddProperty("SCINTILLATIONCOMPONENT1", energy_sc, sc);
+	pl_propreties->AddConstProperty("SCINTILLATIONYIELD", 10000 / CLHEP::MeV, true);
+	pl_propreties->AddConstProperty("RESOLUTIONSCALE", 2.5, true);
+	pl_propreties->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 2.1 * CLHEP::ns, true);
+	pl->SetMaterialPropertiesTable(pl_propreties);
+
+	return pl;
 }
 
 G4Material* MaterialFactory::getBoronCarbideCeramic() {
@@ -91,10 +142,10 @@ G4Material* MaterialFactory::getEpoxy() {
 }
 
 G4Material* MaterialFactory::getGlass() {
-	if (epoxy == NULL) {
+	if (glass == NULL) {
 		// Create Glass
 		glass = G4NistManager::Instance()->FindOrBuildMaterial("G4_GLASS_PLATE");
-
+	
 		const double B1 = 1.03961212;
 		const double B2 = 0.231792344;
 		const double B3 = 1.01046945;
@@ -104,23 +155,19 @@ G4Material* MaterialFactory::getGlass() {
 
 		std::vector<double> energy;
 		std::vector<double> refractiveIndex;
-		double wavelength;
+		
 
-		for (LAMBDA_MIN; wavelength <= LAMBDA_MAX; wavelength += 10.0)
+		for (double wavelength=LAMBDA_MAX; wavelength >= LAMBDA_MIN; wavelength -= 10.0*CLHEP::nm)
 		{
-			// Convertissez la longueur d'onde en énergie en utilisant E=hc/λ
 			double photonEnergy = (CLHEP::h_Planck * CLHEP::c_light / (wavelength * CLHEP::nm));
-
-			// Calculez l'indice de réfraction en utilisant la loi de Sellmeier
 			double n = sqrt(1 + B1 * pow(wavelength, 2) / (pow(wavelength, 2) - C1) +
 							B2 * pow(wavelength, 2) / (pow(wavelength, 2) - C2) +
 							B3 * pow(wavelength, 2) / (pow(wavelength, 2) - C3));
-
-			// Ajoutez l'énergie et l'indice de réfraction à leurs listes respectives
 			energy.push_back(photonEnergy);
 			refractiveIndex.push_back(n);
 		}
 		// Set material properties table.
+		
 		G4MaterialPropertiesTable *mpt = new G4MaterialPropertiesTable();
 		mpt->AddProperty("RINDEX", &energy[0], &refractiveIndex[0], energy.size());
 		glass->SetMaterialPropertiesTable(mpt);

@@ -68,20 +68,23 @@ public:
 					boost::str(boost::format("/ps/tMax %g ns") % (((rnd::General*) time)->getXMax() / CLHEP::ns)));
 		}
 		// Get hits collection
-		G4Sipm* sipm =
-				((DetectorConstruction*) G4RunManager::GetRunManager()->GetUserDetectorConstruction())->getSipmHousing()->getSipm();
+		G4Sipm* sipm[9];
+		for (int j=0; j<9; i++)
+		{
+		sipm[j] =
+				((DetectorConstruction*) G4RunManager::GetRunManager()->GetUserDetectorConstruction())->getSipmHousing(j)->getSipm();
 		G4SipmHitsCollection* hc = (G4SipmHitsCollection*) event->GetHCofThisEvent()->GetHC(0);
 		// Fill hits collection.
 		for (size_t i = 0; i < nParticles; i++) {
 			double eKin = energy->shoot();
 			// Dice PDE.
 			if (CLHEP::RandFlat::shoot()
-					> sipm->getModel()->getPhotonDetectionEfficiency(CLHEP::c_light * CLHEP::h_Planck / eKin)) {
+					> sipm[j]->getModel()->getPhotonDetectionEfficiency(CLHEP::c_light * CLHEP::h_Planck / eKin)) {
 				continue;
 			}
 			// Create hit.
 			G4SipmHit* h = new G4SipmHit();
-			h->setSipmId(sipm->getId());
+			h->setSipmId(sipm[j]->getId());
 			// Randomize position.
 			h->setPosition(position->shoot());
 			// Randomize time.
@@ -93,7 +96,8 @@ public:
 			hc->insert(h);
 		}
 		// Add digitizer module.
-		new FastEffectiveCellsFiredDigitizer(sipm);
+		new FastEffectiveCellsFiredDigitizer(sipm[j]);
+		}
 		//
 		EventAction::EndOfEventAction(event);
 	}

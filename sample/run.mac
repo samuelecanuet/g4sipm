@@ -4,5 +4,4 @@
 /tracking/verbose 0
 
 # Generate events.
-/ps/nParticles 10
-/run/beamOn 10
+/run/beamOn 1

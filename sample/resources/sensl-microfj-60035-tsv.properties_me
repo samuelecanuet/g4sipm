@@ -10,26 +10,26 @@ name:	Sensl-MicroFJ-60035-TSV
 											
 # Setup parameters.											
 temperature:	21. * Celsius										
-biasVoltage:	27. * V										
+biasVoltage:	24.5. * V										
 deadTime: 250. * picosecond			
 gainVariation: 8. * %							
 											
 # Geometry.											
-thickness:	0.1 * mm										
+thickness:	0.09 * mm										
 numberOfCells:	22500										
 cellPitch:	0.035 * mm										
 fillFactor:	75 * %		
-windowThickness: 0.21 * mm
+windowThickness: 0.37 * mm
 windowRefractiveIndex: 1.53										
 											
 # Voltage trace parameters.											
 # The amplitude of the pulse.											
-voltageTrace-amplitude:	1										
+voltageTrace-amplitude:	70										
 # The time constants of the rising and the falling component.											
-voltageTrace-tauFall:	95.58 * ns										
+voltageTrace-tauFall:	50. * ns										
 voltageTrace-tauRise:	1.0 * ns										
 # The time difference between two voltage entries of the trace.											
-voltageTrace-timeBinWidth:	1. * ns										
+voltageTrace-timeBinWidth:	10. * ns										
 # Baseline.											
 voltageTrace-v0:	0									
 # White noise.											

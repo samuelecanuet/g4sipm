@@ -60,7 +60,6 @@ G4LogicalVolume* G4SipmHousing::build() {
 	containerLv->SetVisAttributes(G4VisAttributes::GetInvisible());
 	// Create the individual parts of the housing.
 	G4LogicalVolume* packageLv = buildPackage(containerLv);
-	G4cout<<windowMaterial<<G4endl;
 	buildWindow(packageLv);
 	// Create SiPM.
 	new G4PVPlacement(NULL, getSipmPosition(), getSipm()->build(), "sipmPv", packageLv, false, 0, false);

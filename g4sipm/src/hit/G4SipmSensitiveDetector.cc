@@ -77,7 +77,7 @@ void G4SipmSensitiveDetector::EndOfEvent(G4HCofThisEvent* hCof) {
 	int collectionId = G4SDManager::GetSDMpointer()->GetCollectionID(collectionName[0]);
 	hCof->AddHitsCollection(collectionId, hitsCollection);
 	timer.Stop();
-	std::cout << "G4SipmSensitiveDetector::EndOfEvent(): added hits collection \"" << collectionName[0]
-			<< "\" for sensitive detector \"" << SensitiveDetectorName << "\" with " << hitsCollection->GetSize()
-			<< " entries (" << timer << ")." << std::endl;
+	//std::cout << "G4SipmSensitiveDetector::EndOfEvent(): added hits collection \"" << collectionName[0]
+			// << "\" for sensitive detector \"" << SensitiveDetectorName << "\" with " << hitsCollection->GetSize()
+			// << " entries (" << timer << ")." << std::endl;
 }

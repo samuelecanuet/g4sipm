@@ -21,7 +21,6 @@ void RootPersistVisitor::open(std::string filename) {
 		filename.append(".root");
 	}
 	file = new TFile(filename.c_str(), "RECREATE");
-	G4cout<<"#################################################################################################"<<G4endl;
 }
 
 void RootPersistVisitor::copy(CLHEP::Hep3Vector v, double* a) {

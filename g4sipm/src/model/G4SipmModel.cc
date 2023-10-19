@@ -17,7 +17,21 @@
 G4SipmModel::G4SipmModel(G4SipmGainMapModel* _gainMapModel, G4SipmVoltageTraceModel* _voltageTraceModel) :
 		biasVoltage(70. * CLHEP::volt), temperature(20. * CLHEP::kelvin + CLHEP::STP_Temperature), gainMapModel(
 				_gainMapModel), voltageTraceModel(_voltageTraceModel) {
-	//
+
+	
+	for (long unsigned int i=0; i<deadZones.size(); i++)
+	{
+		for (long unsigned int j=0; j<deadZones[i].size_x; j++)
+		{
+			for (int k=0; k<deadZones[i].size_y; k++)
+			{
+				DeadZoneiD id;
+				id.cell_x = deadZones[i].x+j;  
+				id.cell_y = deadZones[i].y+k; 
+				deadZoneiD.push_back(id);
+			}
+		}
+	}
 }
 
 G4SipmModel::~G4SipmModel() {
@@ -40,11 +54,19 @@ CLHEP::Hep2Vector G4SipmModel::getCellPosition(G4SipmCellId cellId) const {
 	return CLHEP::Hep2Vector(xC, yC);
 }
 
+
 G4SipmCellId G4SipmModel::getCellId(double x, double y, bool respectFillFactor) const {
+
 	int sqrtN = static_cast<int>(sqrt(static_cast<double>(getNumberOfCells())));
 	// Derive cell i,j.
 	int i = static_cast<int>(floor((x + getPitch() / 2.) / getCellPitch()));
 	int j = static_cast<int>(floor((y + getPitch() / 2.) / getCellPitch()));
+	for (const auto& point : deadZoneiD) {
+        if (point.cell_x == i && point.cell_y == j) {
+            return getInvalidCellId();
+        }
+    }
+
 	// Check if it is within the range.
 	if (i < 0 || j < 0 || i >= sqrtN || j >= sqrtN) {
 		return getInvalidCellId();
@@ -91,7 +113,8 @@ G4SipmVoltageTraceModel* G4SipmModel::getVoltageTraceModel() const {
 }
 
 double G4SipmModel::getThickness() const {
-	return .1 * CLHEP::mm;
+	G4cout<<thickness<<G4endl;
+	return thickness;
 }
 
 G4Material* G4SipmModel::getMaterial() const {
@@ -123,5 +146,5 @@ void G4SipmModel::setTemperature(double _temperature) {
 }
 
 double G4SipmModel::getWindowThickness() const {
-	return .1 * CLHEP::mm;
+	return 0.21*CLHEP::mm;
 }
