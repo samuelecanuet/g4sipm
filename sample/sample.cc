@@ -19,12 +19,14 @@
 #include <G4UIQt.hh>
 // #endif
 // #endif
-
+#include "G4VPhysicsConstructor.hh"
 #include "OpticalPhysicsList.hh"
 #include "DetectorConstruction.hh"
 #include "ActionInitialization.hh"
+#include "G4TransportationManager.hh"
 #include "ProgramOptionsUtil.hh"
 #include "ParticleSourceMessenger.hh"
+
 
 int main(int argc, char** argv) {
 	std::cout
@@ -79,7 +81,7 @@ int main(int argc, char** argv) {
 	deactivate.push_back(kRayleigh);
 	deactivate.push_back(kMieHG);
 	deactivate.push_back(kWLS);
-	runManager->SetUserInitialization(new OpticalPhysicsList(0,deactivate));
+	runManager->SetUserInitialization(new OpticalPhysicsList(0));
 	runManager->SetUserInitialization(new ActionInitialization(vm["output"].as<std::string>()));
 	// Initialize particle source messenger with command line arguments.
 	ParticleSourceMessenger::getInstance()->parseProgramOptions(argc, argv);

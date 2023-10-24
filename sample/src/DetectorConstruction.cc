@@ -22,6 +22,11 @@
 
 #include "G4RunManager.hh"
 
+
+#include <G4NistManager.hh>
+#include <G4LogicalSkinSurface.hh>
+#include <G4LogicalBorderSurface.hh>
+
 DetectorConstruction::DetectorConstruction(std::string sipmModelName, std::string housingName, G4bool pl_condition) :
 		G4VUserDetectorConstruction() {
 	// Create SiPM and housing.
@@ -101,16 +106,16 @@ G4VPhysicalVolume* DetectorConstruction::Construct() {
 	// add pcb 
 	
 	G4double fLength_PlasticScintillator = 0;
+	G4double fLength_Grease = 0;
 	if (Condition)
 	{
-		// add grease and wrapping with teflon and copper/steal?
-
-
 		fLength_PlasticScintillator = 5 * CLHEP::cm;
 		G4double fRadius_PlasticScintillator = 1.5 * CLHEP::cm;
+		G4double Teflon_thickness = 1*CLHEP::mm;
 
 		G4Tubs *fSolid_PlasticScintillator = new G4Tubs("PlasticScintillator", 0., fRadius_PlasticScintillator, 0.5 * fLength_PlasticScintillator, 0., 360 * CLHEP::deg); // name, r : 0->1cm, L : 5cm, phi : 0->2pi
 		G4LogicalVolume *fLogic_PlasticScintillator = new G4LogicalVolume(fSolid_PlasticScintillator, MaterialFactory::getInstance()->getEJ200(), "PlasticScintillator"); // solid, material, name
+		
 		G4PVPlacement *fPhys_PlasticScintillator = new G4PVPlacement(0,																									  // rotationMatrix
 																	 G4ThreeVector(0., 0., fLength_PlasticScintillator / 2),											  // position
 																	 fLogic_PlasticScintillator, "PlasticScintillator",													  // its fLogical volume
@@ -122,14 +127,42 @@ G4VPhysicalVolume* DetectorConstruction::Construct() {
 		PlasticScintillator_att->SetForceWireframe(true);
 		PlasticScintillator_att->SetForceSolid(true);
 		fLogic_PlasticScintillator->SetVisAttributes(PlasticScintillator_att);
+
+		G4Tubs *fSolid_Teflon = new G4Tubs("Teflon", fRadius_PlasticScintillator, fRadius_PlasticScintillator+Teflon_thickness, 0.5 * fLength_PlasticScintillator, 0., 360 * CLHEP::deg); // name, r : 0->1cm, L : 5cm, phi : 0->2pi
+		G4LogicalVolume *fLogic_Teflon = new G4LogicalVolume(fSolid_Teflon, MaterialFactory::getInstance()->getTeflon(), "Teflon"); // solid, material, name
+		G4PVPlacement *fPhys_Teflon = new G4PVPlacement(0,																									  // rotationMatrix
+																	 G4ThreeVector(0., 0., fLength_PlasticScintillator / 2),											  // position
+																	 fLogic_Teflon, "Teflon",													  // its fLogical volume
+																	 worldLv,																							  // its mother volume
+																	 false,																								  // no boolean op.
+																	 0);
+
+		G4VisAttributes *Teflon_att = new G4VisAttributes(G4Colour(0.1, 0.1, 0.1, 0.1)); // red
+		Teflon_att->SetForceWireframe(true);
+		Teflon_att->SetForceSolid(true);
+		fLogic_Teflon->SetVisAttributes(Teflon_att);
+		
+		fLength_Grease = 1 * CLHEP::mm;
+		G4Tubs *OpticalGrease = new G4Tubs("OpticalGrease", 0., fRadius_PlasticScintillator, fLength_Grease / 2, 0., 360 * CLHEP::deg); // name, r : 0->1cm, L : 5cm, phi : 0->2pi
+		G4LogicalVolume *Logic_OpticalGrease = new G4LogicalVolume(OpticalGrease, MaterialFactory::getInstance()->getGrease(), "OpticalGrease"); // solid, material, name
+		G4PVPlacement *phys_OpticalGrease = new G4PVPlacement(0,																									  // rotationMatrix
+																	 G4ThreeVector(0., 0., fLength_PlasticScintillator + fLength_Grease / 2 ),											  // position
+																	 Logic_OpticalGrease, "OpticalGrease",													  // its fLogical volume
+																	 worldLv,																							  // its mother volume
+																	 false,																								  // no boolean op.
+																	 0);
+
+		G4VisAttributes *Grease_att = new G4VisAttributes(G4Colour(0.1, 0.1, 0.1, 0.4));
+		Grease_att->SetForceWireframe(true);
+		Grease_att->SetForceSolid(true);
+		Logic_OpticalGrease->SetVisAttributes(Grease_att);
+	
 	}
 
 
 	G4double SiPMSpacing = 6.75 * CLHEP::mm;
 	G4RotationMatrix* myRotation_trSupp = new G4RotationMatrix();
-    myRotation_trSupp->rotateX(0.*CLHEP::deg);
     myRotation_trSupp->rotateY(180.*CLHEP::deg);
-    myRotation_trSupp->rotateZ(0.*CLHEP::rad);
 
 	for (int i = 0; i < 3; i++)
 	{
@@ -138,7 +171,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct() {
 			G4double x = (i-1) * SiPMSpacing;
 			G4double y = (j-1) * SiPMSpacing;
 
-			SiPMs_Housing[i * 3 + j]->setPosition(G4ThreeVector(x, y, fLength_PlasticScintillator + SiPMs_Housing[i]->getPackageDz() / 2));
+			SiPMs_Housing[i * 3 + j]->setPosition(G4ThreeVector(x, y, fLength_PlasticScintillator + fLength_Grease + SiPMs_Housing[i]->getPackageDz() / 2));
 			SiPMs_Housing[i * 3 + j]->setRotation(myRotation_trSupp);
 			SiPMs_Housing[i * 3 + j]->buildAndPlace(worldPv);
 		}
@@ -155,4 +188,19 @@ G4SipmModel* DetectorConstruction::getSipmModel(int i) const {
 
 G4SipmHousing* DetectorConstruction::getSipmHousing(int i) const {
 	return SiPMs_Housing[i];
+}
+
+void DetectorConstruction::constructOpticalSkinSurface(G4LogicalVolume* lv, G4Material* material, G4OpticalSurfaceModel model,
+		G4OpticalSurfaceFinish finish, G4SurfaceType type, G4double value) {
+	G4OpticalSurface* surface = new G4OpticalSurface(lv->GetName() + "Surface", model, finish, type, value);
+	surface->SetMaterialPropertiesTable(material->GetMaterialPropertiesTable());
+	new G4LogicalSkinSurface(lv->GetName() + "Skin", lv, surface);
+}
+
+void DetectorConstruction::constructOpticalBorderSurface(G4VPhysicalVolume* pv, G4VPhysicalVolume* parentPv, G4Material* material,
+		G4OpticalSurfaceModel model, G4OpticalSurfaceFinish finish, G4SurfaceType type, G4double value) {
+	G4OpticalSurface* surface = new G4OpticalSurface(pv->GetName() + "Surface", model, finish, type, value);
+	surface->SetMaterialPropertiesTable(material->GetMaterialPropertiesTable());
+	new G4LogicalBorderSurface(pv->GetName() + "BorderSurface1", pv, parentPv, surface);
+	new G4LogicalBorderSurface(pv->GetName() + "BorderSurface2", parentPv, pv, surface);
 }

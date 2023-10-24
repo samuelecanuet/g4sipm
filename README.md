@@ -52,3 +52,12 @@ The documentation is available at http://g4sipm.readthedocs.io/en/latest/index.h
 To build the documentation, invoke
 
     make docs
+
+## Version
+
+# 1.0 
+Geometry : 
+* SiPMs : 9 Sensl-MicroFJ-60035-TSV
+* Plastic Scintillator : EJ200
+* Optical Grease
+* Teflon

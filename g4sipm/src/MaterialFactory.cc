@@ -14,8 +14,13 @@
 
 #include "VectorUtil.hh"
 
-double MaterialFactory::LAMBDA_MIN = 200 * CLHEP::nm;
-double MaterialFactory::LAMBDA_MAX = 3000 * CLHEP::nm;
+using namespace CLHEP;
+#include <iostream>
+#include <vector>
+
+using namespace std;
+double MaterialFactory::LAMBDA_MIN = 200 * nm;
+double MaterialFactory::LAMBDA_MAX = 3000 * nm;
 
 MaterialFactory::MaterialFactory() {
 	air = NULL;
@@ -24,6 +29,8 @@ MaterialFactory::MaterialFactory() {
 	epoxy = NULL;
 	silicon = NULL;
 	glass = NULL;
+	ogrease = NULL;
+	ptfe=NULL;
 }
 
 MaterialFactory::~MaterialFactory() {
@@ -42,6 +49,13 @@ MaterialFactory* MaterialFactory::getInstance() {
 
 G4Material* MaterialFactory::getVacuum() {
 	vacuum = G4NistManager::Instance()->FindOrBuildMaterial("G4_Galactic");
+	G4MaterialPropertiesTable *vacuum_propreties = new G4MaterialPropertiesTable();
+	double energy[2] = {1*eV, 10*eV};
+	double rindex[2] = {1.0, 1.0};
+	vacuum_propreties->AddProperty("RINDEX", energy, rindex, 2);
+	vacuum_propreties->AddConstProperty("ABSLENGTH", 100*m, true);
+	vacuum->SetMaterialPropertiesTable(vacuum_propreties);
+
 	return vacuum;
 }
 
@@ -60,7 +74,7 @@ G4Material *MaterialFactory::getEJ200() {
 	std::vector<G4double> energy_sc;
 	for (unsigned long int i=1; i <= wavelenght_sc.size(); i++)
 	{
-		energy_sc.push_back(CLHEP::h_Planck * CLHEP::c_light / (wavelenght_sc[wavelenght_sc.size()-i] * CLHEP::nm));
+		energy_sc.push_back(h_Planck * c_light / (wavelenght_sc[wavelenght_sc.size()-i] * nm));
 	}
 
 	std::vector<G4double> sc = {
@@ -78,13 +92,23 @@ G4Material *MaterialFactory::getEJ200() {
 		0.07115385, 0.06675824, 0.06236264, 0.05796703};
 
 	G4MaterialPropertiesTable *pl_propreties = new G4MaterialPropertiesTable();
-	pl_propreties->AddConstProperty("RINDEX", 1.58, true);
-	pl_propreties->AddConstProperty("ABSLENGTH", 380 * CLHEP::cm, true);
+	double energy[2] = {1*eV, 10*eV};
+	double rindex[2] = {1.58, 1.58};
+	double abs[2] = {380*cm, 380*cm};
+	double sc_yield[2] = {10000, 10000};
+	double res_scale[2] = {2.5, 2.5};
+	double sc_t_cst[2] = {2.1*ns, 2.1*ns};
+	double sc_rt[2] = {0.9*ns, 0.9*ns};
+
+	pl_propreties->AddProperty("RINDEX", energy, rindex, 2);
+	pl_propreties->AddConstProperty("ABSLENGTH", 380 * cm, true);
 	pl_propreties->AddProperty("SCINTILLATIONCOMPONENT1", energy_sc, sc);
-	pl_propreties->AddConstProperty("SCINTILLATIONYIELD", 10000 / CLHEP::MeV, true);
+	pl_propreties->AddConstProperty("SCINTILLATIONYIELD", 10000 / MeV, true);
 	pl_propreties->AddConstProperty("RESOLUTIONSCALE", 2.5, true);
-	pl_propreties->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 2.1 * CLHEP::ns, true);
+	pl_propreties->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 2.1 * ns, true);
+	pl_propreties->AddConstProperty("SCINTILLATIONRISETIME1", 0.9 * ns, true);
 	pl->SetMaterialPropertiesTable(pl_propreties);
+	pl->GetIonisation()->SetBirksConstant(0.126 * mm / MeV);
 
 	return pl;
 }
@@ -110,7 +134,7 @@ G4Material* MaterialFactory::getAir() {
 		air = G4NistManager::Instance()->FindOrBuildMaterial("G4_AIR");
 		// Refractive index for dry air, 20°C, 1 atm [PDG].
 		const double rIndex = 1. + 172. * 1e-6;
-		double energies[] = { CLHEP::h_Planck * CLHEP::c_light / LAMBDA_MAX, CLHEP::h_Planck * CLHEP::c_light
+		double energies[] = { h_Planck * c_light / LAMBDA_MAX, h_Planck * c_light
 				/ LAMBDA_MIN };
 		double indices[] = { rIndex, rIndex };
 		// Set material properties table.
@@ -121,16 +145,42 @@ G4Material* MaterialFactory::getAir() {
 	return air;
 }
 
+G4Material* MaterialFactory::getGrease() {
+	if (ogrease == NULL) {
+		// http://siliconesolutions.com/optical-coupling-gels.html
+		G4Element* Si = G4NistManager::Instance()->FindOrBuildElement("Si");
+		G4Element* O = G4NistManager::Instance()->FindOrBuildElement("O");
+		G4Element* C = G4NistManager::Instance()->FindOrBuildElement("C");
+		G4Element* H = G4NistManager::Instance()->FindOrBuildElement("H");
+		ogrease= new G4Material("opticalGrease", 1.02 * g / cm3, 4);
+
+		ogrease->AddElement(Si, 1);
+		ogrease->AddElement(O, 2);
+		ogrease->AddElement(C, 1);
+		ogrease->AddElement(H, 3);
+
+		// Construct material properties table
+		double energies[2] = { 0.1 * eV, 10 * eV };
+		double rindex[2] = {1.466, 1.466};
+		double abslenght[2] = {9999.5 * cm, 9999.5 * cm};
+		G4MaterialPropertiesTable* mpt = new G4MaterialPropertiesTable;
+		mpt->AddProperty("RINDEX", energies, rindex, 2);
+		mpt->AddProperty("ABSLENGTH", energies, abslenght, 2);
+		ogrease->SetMaterialPropertiesTable(mpt);
+	}
+	return ogrease;
+}
+
 G4Material* MaterialFactory::getEpoxy() {
 	if (epoxy == NULL) {
 		// Create Bisphenol A which is the basis of each epoxy [wikipedia].
-		epoxy = new G4Material("BisphenolA", 1.2 * CLHEP::g / CLHEP::cm3, 3, kStateSolid);
+		epoxy = new G4Material("BisphenolA", 1.2 * g / cm3, 3, kStateSolid);
 		epoxy->AddElement(G4NistManager::Instance()->FindOrBuildElement("Si"), 15);
 		epoxy->AddElement(G4NistManager::Instance()->FindOrBuildElement("H"), 16);
 		epoxy->AddElement(G4NistManager::Instance()->FindOrBuildElement("O"), 2);
 		// Refractive index [private com. Hamamatsu].
 		// TODO(tim): implement wavelength dependent index of refraction.
-		double energies[] = { CLHEP::h_Planck * CLHEP::c_light / LAMBDA_MAX, CLHEP::h_Planck * CLHEP::c_light
+		double energies[] = { h_Planck * c_light / LAMBDA_MAX, h_Planck * c_light
 				/ LAMBDA_MIN };
 		double indices[] = { 1.5, 1.5 };
 		// Set material properties table.
@@ -141,6 +191,41 @@ G4Material* MaterialFactory::getEpoxy() {
 	return epoxy;
 }
 
+G4Material* MaterialFactory::getTeflon() {
+	// reflective teflon wrapping
+	if (ptfe == NULL) {
+		G4Element* F = G4NistManager::Instance()->FindOrBuildElement("F");
+		G4Element* C = G4NistManager::Instance()->FindOrBuildElement("C");
+		ptfe= new G4Material("Teflon", 2.2 * g / cm3, 2);
+		ptfe->AddElement(F, 4);  // https://en.wikipedia.org/wiki/Polytetrafluoroethylene
+		ptfe->AddElement(C, 2);
+
+		// Construct material properties table
+		double wavelenght[4] = {175*nm, 250*nm, 310*nm, 550*nm};
+		double energy[4];
+		for (int i=3; i>=0; i--)
+		{
+			energy[3-i] = h_Planck * c_light / (wavelenght[i]);
+		}
+		double rindex[4] = {1.51, 1.31, 1.31, 1.36};
+		double reflectivity[4] = {65.0, 84.0, 95.0, 98.0};
+		G4MaterialPropertiesTable* mpt = new G4MaterialPropertiesTable;
+		mpt->AddProperty("RINDEX", energy, rindex, 4);
+		// scattering / reflecting of this material
+		mpt->AddProperty("REFLECTIVITY", energy, reflectivity, 4);
+		mpt->AddConstProperty("SPECULARLOBECONSTANT", 4 * perCent, true);
+		mpt->AddConstProperty("SPECULARSPIKECONSTANT", 0. * perCent, true);
+		mpt->AddConstProperty("BACKSCATTERCONSTANT", 0. * perCent, true);
+
+		mpt->AddConstProperty("EFFICIENCY", 100., true);
+		mpt->AddConstProperty("ROUGHNESS", 75*deg, true);
+		mpt->AddConstProperty("ABSLENGTH", 0.01*mm, true);
+		//
+		ptfe->SetMaterialPropertiesTable(mpt);
+	}
+	return ptfe;
+}
+
 G4Material* MaterialFactory::getGlass() {
 	if (glass == NULL) {
 		// Create Glass
@@ -149,17 +234,17 @@ G4Material* MaterialFactory::getGlass() {
 		const double B1 = 1.03961212;
 		const double B2 = 0.231792344;
 		const double B3 = 1.01046945;
-		const double C1 = 6.00069867e-3 * (CLHEP::um * CLHEP::um);
-		const double C2 = 2.00179144e-2 * (CLHEP::um * CLHEP::um);
-		const double C3 = 1.03560653e2 * (CLHEP::um * CLHEP::um);
+		const double C1 = 6.00069867e-3 * (um * um);
+		const double C2 = 2.00179144e-2 * (um * um);
+		const double C3 = 1.03560653e2 * (um * um);
 
 		std::vector<double> energy;
 		std::vector<double> refractiveIndex;
 		
 
-		for (double wavelength=LAMBDA_MAX; wavelength >= LAMBDA_MIN; wavelength -= 10.0*CLHEP::nm)
+		for (double wavelength=LAMBDA_MAX; wavelength >= LAMBDA_MIN; wavelength -= 10.0*nm)
 		{
-			double photonEnergy = (CLHEP::h_Planck * CLHEP::c_light / (wavelength * CLHEP::nm));
+			double photonEnergy = (h_Planck * c_light / (wavelength * nm));
 			double n = sqrt(1 + B1 * pow(wavelength, 2) / (pow(wavelength, 2) - C1) +
 							B2 * pow(wavelength, 2) / (pow(wavelength, 2) - C2) +
 							B3 * pow(wavelength, 2) / (pow(wavelength, 2) - C3));
@@ -240,9 +325,9 @@ G4Material* MaterialFactory::getSilicon() {
 		double energies[kSamples];
 		// double abslength[kSamples];
 		for (int i = 0; i < kSamples; ++i) {
-			energies[i] = CLHEP::h_Planck * CLHEP::c_light / (lambda[kSamples - i - 1] * CLHEP::micrometer);
+			energies[i] = h_Planck * c_light / (lambda[kSamples - i - 1] * micrometer);
 			absolute[i] = std::sqrt(real[i] * real[i] + imaginary[i] * imaginary[i]);
-			// abslength[i] = 4 * CLHEP::pi * imaginary[i] / (lambda[kSamples - i - 1] * CLHEP::micrometer);
+			// abslength[i] = 4 * pi * imaginary[i] / (lambda[kSamples - i - 1] * micrometer);
 			// std::cout << lambda[n - i - 1] * micrometer / nm << "\t" << abslength[i] << std::endl;
 		}
 		// XXX:

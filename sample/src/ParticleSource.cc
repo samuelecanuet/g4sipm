@@ -13,6 +13,7 @@
 #include <G4RunManager.hh>
 #include <G4Run.hh>
 #include <G4OpticalPhoton.hh>
+#include <G4Positron.hh>
 #include <Randomize.hh>
 
 #include <CLHEP/Units/SystemOfUnits.h>
@@ -104,7 +105,7 @@ void ParticleSource::GeneratePrimaries(G4Event* event) {
 	// Create particles.
 	for (size_t i = 0; i < nParticles; i++) {
 		particleGun->SetNumberOfParticles(1);
-		particleGun->SetParticleDefinition(G4OpticalPhoton::Definition());
+		particleGun->SetParticleDefinition(G4Positron::Definition());
 		// Dice time.
 		particleGun->SetParticleTime(time->shoot());
 		// Dice energy.

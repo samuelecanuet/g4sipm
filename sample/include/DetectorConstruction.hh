@@ -17,6 +17,15 @@
 #include "G4Sipm.hh"
 #include "housing/G4SipmHousing.hh"
 
+
+#include <G4Material.hh>
+#include <G4VisAttributes.hh>
+#include <G4Color.hh>
+#include <G4LogicalVolume.hh>
+#include <G4OpticalSurface.hh>
+#include <G4SurfaceProperty.hh>
+#include <G4VPhysicalVolume.hh>
+
 /**
  * User detector construction. Places a single SiPM in the world.
  */
@@ -58,7 +67,13 @@ public:
 	 */
 	G4SipmHousing* getSipmHousing(int i) const;
 
-	//void SetPlasticScintillator();
+	static void constructOpticalSkinSurface(G4LogicalVolume* lv, G4Material* material, G4OpticalSurfaceModel model =
+			unified, G4OpticalSurfaceFinish finish = ground, G4SurfaceType type = dielectric_dielectric,
+			G4double value = 1.0);
+	static void constructOpticalBorderSurface(G4VPhysicalVolume* pv, G4VPhysicalVolume* parentPv, G4Material* material,
+			G4OpticalSurfaceModel model = unified, G4OpticalSurfaceFinish finish = ground, G4SurfaceType type =
+					dielectric_dielectric, G4double value = 1.0);
+
 
 };
 

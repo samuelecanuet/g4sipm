@@ -269,6 +269,17 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmGainMapModel.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmVoltageTraceModel.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/housing/G4SipmHousing.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.hh \
+ /softs/geant4.11.1.2/include/Geant4/graphics_reps_defs.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Colour.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Color.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4Color.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Physics2DVector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Physics2DVector.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4SurfaceProperty.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4SurfaceProperty.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Box.hh \
  /softs/geant4.11.1.2/include/Geant4/G4GeomTypes.hh \
  /softs/geant4.11.1.2/include/Geant4/G4GeomConfig.hh \
@@ -293,11 +304,6 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4Box.icc \
  /softs/geant4.11.1.2/include/Geant4/G4Tubs.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Tubs.icc \
- /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.hh \
- /softs/geant4.11.1.2/include/Geant4/graphics_reps_defs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Colour.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Color.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.icc \
  /softs/geant4.11.1.2/include/Geant4/G4PVPlacement.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/MaterialFactory.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmModelFactory.hh \
@@ -504,4 +510,16 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4UItokenNum.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ApplicationState.hh \
  /softs/geant4.11.1.2/include/Geant4/G4UserTrackingAction.hh \
- /softs/geant4.11.1.2/include/Geant4/G4RunManagerKernel.hh
+ /softs/geant4.11.1.2/include/Geant4/G4RunManagerKernel.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4NistManager.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4NistElementBuilder.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4NistMaterialBuilder.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4ICRU90StoppingData.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Pow.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Exp.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalSkinSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalSurface.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalSkinSurface.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalBorderSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalBorderSurface.icc

@@ -8,8 +8,8 @@
 
 #
 # Particle energy range
-/ps/energy/eMin 2.92 eV # 350 nm
-/ps/energy/eMax 2.92 eV # 350 nm
+/ps/energy/eMin 100 keV # 350 nm
+/ps/energy/eMax 100 keV # 350 nm
 
 #
 # Particle source plane position.
@@ -26,8 +26,8 @@
 
 #
 # Angular distribution of the particle directions.
-/ps/angle/thetaMin 0 deg
-/ps/angle/thetaMax 180 deg
+/ps/angle/thetaMin -90 deg
+/ps/angle/thetaMax 90 deg
 /ps/angle/phiMin 0 deg
 /ps/angle/phiMax 180 deg
 
@@ -38,4 +38,4 @@
 
 #
 # Number of particles.
-/ps/nParticles 1000000
+/ps/nParticles 2

@@ -1355,8 +1355,6 @@ sample/CMakeFiles/sample.dir/sample.cc.o: \
  /usr/include/qt5/QtGui/qcursor.h /usr/include/qt5/QtGui/qkeysequence.h \
  /usr/include/qt5/QtGui/qicon.h /usr/include/qt5/QtWidgets/qdockwidget.h \
  /usr/include/qt5/QtWidgets/qdialog.h \
- /home/local1/Documents/g4sipm/g4sipm/include/OpticalPhysicsList.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VModularPhysicsList.hh \
  /softs/geant4.11.1.2/include/Geant4/G4VPhysicsConstructor.hh \
  /softs/geant4.11.1.2/include/Geant4/G4PhysicsListHelper.hh \
  /softs/geant4.11.1.2/include/Geant4/G4PhysicsListOrderingParameter.hh \
@@ -1393,6 +1391,9 @@ sample/CMakeFiles/sample.dir/sample.cc.o: \
  /usr/include/c++/8/bits/regex_executor.h \
  /usr/include/c++/8/bits/regex_executor.tcc \
  /softs/geant4.11.1.2/include/Geant4/G4VUPLSplitter.hh \
+ /home/local1/Documents/g4sipm/g4sipm/include/OpticalPhysicsList.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VModularPhysicsList.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VPhysicsConstructor.hh \
  /softs/geant4.11.1.2/include/Geant4/G4VUserPhysicsList.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ProductionCutsTable.hh \
  /softs/geant4.11.1.2/include/Geant4/G4MaterialCutsCouple.hh \
@@ -1416,8 +1417,18 @@ sample/CMakeFiles/sample.dir/sample.cc.o: \
  /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmGainMapModel.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmVoltageTraceModel.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/housing/G4SipmHousing.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Color.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Physics2DVector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Physics2DVector.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4SurfaceProperty.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4SurfaceProperty.hh \
  /home/local1/Documents/g4sipm/sample/include/ActionInitialization.hh \
  /softs/geant4.11.1.2/include/Geant4/G4VUserActionInitialization.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4TransportationManager.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4SafetyHelper.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4TransportationManager.icc \
  /home/local1/Documents/g4sipm/sample/include/ProgramOptionsUtil.hh \
  /home/local1/Documents/g4sipm/sample/include/ParticleSourceMessenger.hh \
  /softs/geant4.11.1.2/include/Geant4/G4UImessenger.hh \

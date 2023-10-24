@@ -4,4 +4,5 @@
 /tracking/verbose 0
 
 # Generate events.
+/run/printProgress 1
 /run/beamOn 1

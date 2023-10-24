@@ -24,6 +24,8 @@ private:
 	G4Material* glass;
 	G4Material* vacuum;
 	G4Material* pl;
+	G4Material* ogrease;
+	G4Material* ptfe;
 
 	/**
 	 * Hidden constructor.
@@ -80,6 +82,16 @@ public:
 	 * @return G4Material - plastic for EJ200.
 	 */
 	G4Material* getEJ200();
+
+	/**
+	 * @return G4Material - Optical Grease
+	 */
+	G4Material* getGrease();
+
+	/**
+	 * @return G4Material - Teflon
+	 */
+	G4Material* getTeflon();
 };
 
 #endif /* MATERIALFACTORY_HH_ */

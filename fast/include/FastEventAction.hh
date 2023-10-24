@@ -69,7 +69,7 @@ public:
 		}
 		// Get hits collection
 		G4Sipm* sipm[9];
-		for (int j=0; j<9; i++)
+		for (int j=0; j<9; j++)
 		{
 		sipm[j] =
 				((DetectorConstruction*) G4RunManager::GetRunManager()->GetUserDetectorConstruction())->getSipmHousing(j)->getSipm();

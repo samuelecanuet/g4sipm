@@ -15,6 +15,7 @@
 
 OpticalPhysicsList::OpticalPhysicsList(int verbose, std::vector<G4OpticalProcessIndex> deactivate) {
 	G4OpticalPhysics* phys = new G4OpticalPhysics(verbose);
+	G4VPhysicsConstructor *emPhysicsList = new G4EmStandardPhysics(verbose);
 	auto params = G4OpticalParameters::Instance();
 	// Deactivate processes
 	for (std::vector<G4OpticalProcessIndex>::iterator it = deactivate.begin(); it != deactivate.end(); it++) {
@@ -23,6 +24,7 @@ OpticalPhysicsList::OpticalPhysicsList(int verbose, std::vector<G4OpticalProcess
 	}
 	//
 	RegisterPhysics(phys);
+	RegisterPhysics(emPhysicsList);
 	SetVerboseLevel(verbose);
 }
 

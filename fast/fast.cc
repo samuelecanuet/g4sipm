@@ -58,9 +58,9 @@ int main(int argc, char** argv) {
 	G4RunManager* runManager = new G4RunManager();
 	// Set mandatory initialization classes.
 	DetectorConstruction* detectorConstruction = new DetectorConstruction(vm["model"].as<std::string>(),
-			vm["housing"].as<std::string>());
+			vm["housing"].as<std::string>(), vm["plastic"].as<bool>());
 	if (vm.count("bias-voltage")) {
-		for (int i=0; i<9 i++)
+		for (int i=0; i<9; i++)
 		{
 					detectorConstruction->getSipmModel(i)->setBiasVoltage(vm["bias-voltage"].as<double>() * CLHEP::volt);
 		std::cout << "bias voltage = " << detectorConstruction->getSipmModel(i)->getBiasVoltage() / CLHEP::volt
@@ -72,7 +72,7 @@ int main(int argc, char** argv) {
 		}
 	}
 	if (vm.count("temperature")) {
-		for (int i=0; i<9 i++)
+		for (int i=0; i<9; i++)
 		{
 		detectorConstruction->getSipmModel(i)->setTemperature(
 				vm["temperature"].as<double>() * CLHEP::kelvin + CLHEP::STP_Temperature);
