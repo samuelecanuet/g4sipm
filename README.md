@@ -61,3 +61,8 @@ Geometry :
 * Plastic Scintillator : EJ200
 * Optical Grease
 * Teflon
+
+# 1.1
+Material : All propreties included
+Sensor : Extract optical data (in dev)
+Physic List : Set Scintillation & Cerenkov Tracking Secondaries First
