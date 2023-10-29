@@ -26,7 +26,8 @@
 #include "G4TransportationManager.hh"
 #include "ProgramOptionsUtil.hh"
 #include "ParticleSourceMessenger.hh"
-
+#include "SteppingAction.hh"
+#include "Sensor.hh"
 
 int main(int argc, char** argv) {
 	std::cout
@@ -48,7 +49,7 @@ int main(int argc, char** argv) {
 			"The SiPM housing type ('ceramic', 'smd', 'default'.") //,
 	("temperature", po::value<double>(), "override the models default temperature setting") //
 	("bias-voltage", po::value<double>(), "override the models default bias voltage")
-	("plastic", po::value<bool>()->default_value(false), "true/false to use a EJ200 plastic Scintillator");
+	("plastic", po::value<bool>()->default_value(true), "true/false to use a EJ200 plastic Scintillator");
 	po::variables_map vm = ProgramOptionsUtil::parse(argc, argv, desc, true);
 	if (vm.count("help")) {
 		std::cout << desc << std::endl;
@@ -83,6 +84,8 @@ int main(int argc, char** argv) {
 	deactivate.push_back(kWLS);
 	runManager->SetUserInitialization(new OpticalPhysicsList(0));
 	runManager->SetUserInitialization(new ActionInitialization(vm["output"].as<std::string>()));
+	runManager->SetUserAction(new SteppingAction);
+	
 	// Initialize particle source messenger with command line arguments.
 	ParticleSourceMessenger::getInstance()->parseProgramOptions(argc, argv);
 	// Initialize G4 kernel.
@@ -90,23 +93,23 @@ int main(int argc, char** argv) {
 	// Create visualization manager.
 	G4UImanager* uiManager = G4UImanager::GetUIpointer();
 //#ifdef G4VIS_USE
-	G4VisManager* visManager = new G4VisExecutive;
-	visManager->Initialize();
+	// G4VisManager* visManager = new G4VisExecutive;
+	// visManager->Initialize();
 //#endif
 	// Create UI manager.
 //#ifdef G4UI_USE
 	uiManager = G4UImanager::GetUIpointer();
 	// Batch mode.
-	if (vm.count("mac")) {
-		uiManager->ApplyCommand((G4String("/control/execute ") + vm["mac"].as<std::string>()));
-	}// else {
+	 if (vm.count("mac")) {
+	 	uiManager->ApplyCommand((G4String("/control/execute ") + vm["mac"].as<std::string>()));
+	 }// else {
 		// Interactive mode.
 // #ifdef G4UI_USE_QT
 // 		// Create Qt UI.
-		G4UIQt* ui = new G4UIQt(argc, argv);
-		uiManager->ApplyCommand("/control/execute vis-qt.mac");
-		ui->SessionStart();
-		delete ui;
+		// G4UIQt* ui = new G4UIQt(argc, argv);
+		// uiManager->ApplyCommand("/control/execute vis-qt.mac");
+		// ui->SessionStart();
+		// delete ui;
 // #else
 // 		// Create default UI.
 // 		G4UIExecutive * ui = new G4UIExecutive(argc, argv);

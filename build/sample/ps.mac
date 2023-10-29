@@ -9,7 +9,7 @@
 #
 # Particle energy range
 /ps/energy/eMin 100 keV # 350 nm
-/ps/energy/eMax 100 keV # 350 nm
+/ps/energy/eMax 200 keV # 350 nm
 
 #
 # Particle source plane position.
@@ -38,4 +38,4 @@
 
 #
 # Number of particles.
-/ps/nParticles 2
+/ps/nParticles 1

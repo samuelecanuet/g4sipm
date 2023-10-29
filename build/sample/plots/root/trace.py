@@ -48,54 +48,62 @@ if __name__ == "__main__":
 	# Open file.
 	f = TFile(filename)
 	print(filename)
-	for index in range(1,10):
-		digi = f.Get(f"g4sipmVoltageTraceDigis-{index}")
-		model = f.Get("sipmModel")
-		model.GetEntry(0)
-		# Extract trace.
-		voltages = []
-		times = []
-		for i in range(digi.GetEntries()):
-			digi.GetEntry(i)
-			if digi.time >= start and digi.time <= stop:
-				voltages.append(digi.voltage )
-				times.append(digi.time / 1000)
-		axs[(index - 1) // 3][(index - 1) % 3].plot(times, voltages, '-')
-		axs[(index - 1) // 3][(index - 1) % 3].set_title(f"SiPM n°{index}")
-		axs[(index - 1) // 3][(index - 1) % 3].label_outer()
-
-		if (index - 1) // 3 == 2:
-			axs[(index - 1) // 3][(index - 1) % 3].set_xlabel(u'time / µs')
-		if (index - 1) % 3 == 0:
-			axs[(index - 1) // 3][(index - 1) % 3].set_ylabel("Voltage (mV)")
-
-	fig.suptitle("%s\n%d x %d mm, %d $\mu$m pitch\n%d cells"  % (model.model, model.pitch, model.pitch, model.cellPitch * 1000, model.numberOfCells))
-	plt.show()
-
-
-	fig, axs = plt.subplots(3,3, figsize=(9,9), sharex='all', sharey='all')
-	plt.subplots_adjust(wspace=0.3, hspace=0.3)
+	Nb_event=0
+	for i in f.GetListOfKeys():
+		if i.GetName() == "g4sipmHits-1":
+			Nb_event+=1
 	
 	for index in range(1,10):
-		hit = f.Get(f"g4sipmHits-{index}")
-		liste_x=[]
-		liste_y=[]
-		for i in range(hit.GetEntries()):
-			hit.GetEntry(i)
-			liste_x.append(hit.position[0])
-			liste_y.append(hit.position[1])
+		for event in range(1,Nb_event+1):	
+			digi = f.Get(f"g4sipmVoltageTraceDigis-{index};{event}")
+			model = f.Get("sipmModel")
+			hit = f.Get(f"g4sipmHits-{index};{event}").GetEntries()
+			model.GetEntry(0)
+			# Extract trace.
+			voltages = []
+			times = []
+			for i in range(digi.GetEntries()):
+				digi.GetEntry(i)
+				if digi.time >= start and digi.time <= stop:
+					voltages.append(digi.voltage )
+					times.append(digi.time / 1000)
+			axs[(index - 1) // 3][(index - 1) % 3].plot(times, voltages, '-')
+			axs[(index - 1) // 3][(index - 1) % 3].set_title(f"SiPM n°{index}")
+			axs[(index - 1) // 3][(index - 1) % 3].label_outer()
+			axs[(index - 1) // 3][(index - 1) % 3].text(0.1, 0.9, f"Hits : {hit}", transform=axs[(index - 1) // 3][(index - 1) % 3].transAxes)
 
-		x_offset = ((index - 1) // 3-1) * 6.75
-		y_offset = ((index - 1) % 3-1) * 6.75
-		axs[(index - 1) // 3][(index - 1) % 3].hist2d(np.array(liste_x)-x_offset, np.array(liste_y)-y_offset, bins=(150, 150))
-		axs[(index - 1) // 3][(index - 1) % 3].set_title(f"SiPM n°{index}")
-		axs[(index - 1) // 3][(index - 1) % 3].label_outer()
-
-		if (index - 1) // 3 == 2:
-			axs[(index - 1) // 3][(index - 1) % 3].set_xlabel("x (mm)")
-		if (index - 1) % 3 == 0:
-			axs[(index - 1) // 3][(index - 1) % 3].set_ylabel("y (mm)")
+			if (index - 1) // 3 == 2:
+				axs[(index - 1) // 3][(index - 1) % 3].set_xlabel(u'time / µs')
+			if (index - 1) % 3 == 0:
+				axs[(index - 1) // 3][(index - 1) % 3].set_ylabel("Voltage (mV)")
 
 	fig.suptitle("%s\n%d x %d mm, %d $\mu$m pitch\n%d cells"  % (model.model, model.pitch, model.pitch, model.cellPitch * 1000, model.numberOfCells))
 	plt.show()
+
+
+	# fig, axs = plt.subplots(3,3, figsize=(9,9), sharex='all', sharey='all')
+	# plt.subplots_adjust(wspace=0.3, hspace=0.3)
+	
+	# for index in range(1,10):
+	# 	hit = f.Get(f"g4sipmHits-{index}")
+	# 	liste_x=[]
+	# 	liste_y=[]
+	# 	for i in range(hit.GetEntries()):
+	# 		hit.GetEntry(i)
+	# 		liste_x.append(hit.position[0])
+	# 		liste_y.append(hit.position[1])
+
+	# 	x_offset = ((index - 1) // 3-1) * 6.75
+	# 	y_offset = ((index - 1) % 3-1) * 6.75
+	# 	axs[(index - 1) // 3][(index - 1) % 3].hist2d(np.array(liste_x)-x_offset, np.array(liste_y)-y_offset, bins=(150, 150))
+	# 	axs[(index - 1) // 3][(index - 1) % 3].set_title(f"SiPM n°{index}")
+	# 	axs[(index - 1) // 3][(index - 1) % 3].label_outer()
+
+	# 	if (index - 1) // 3 == 2:
+	# 		axs[(index - 1) // 3][(index - 1) % 3].set_xlabel("x (mm)")
+	# 	if (index - 1) % 3 == 0:
+	# 		axs[(index - 1) // 3][(index - 1) % 3].set_ylabel("y (mm)")
+
+	# fig.suptitle("%s\n%d x %d mm, %d $\mu$m pitch\n%d cells"  % (model.model, model.pitch, model.pitch, model.cellPitch * 1000, model.numberOfCells))
+	# plt.show()
 

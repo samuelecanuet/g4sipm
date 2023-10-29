@@ -23,7 +23,6 @@ G4SipmVoltageTraceDigitizer::G4SipmVoltageTraceDigitizer(G4Sipm* _sipm) :
 }
 
 G4SipmVoltageTraceDigitizer::~G4SipmVoltageTraceDigitizer() {
-	//
 }
 
 const G4SipmDigiCollection* G4SipmVoltageTraceDigitizer::getDigiCollection() {

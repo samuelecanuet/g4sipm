@@ -1,13 +1,9 @@
-sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
- /home/local1/Documents/g4sipm/sample/src/DetectorConstruction.cc \
+sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o: \
+ /home/local1/Documents/g4sipm/sample/src/SteppingAction.cc \
  /usr/include/stdc-predef.h \
- /home/local1/Documents/g4sipm/sample/include/DetectorConstruction.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ThreeVector.hh \
- /softs/geant4.11.1.2/include/Geant4/globals.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ios.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Types.hh \
- /softs/geant4.11.1.2/include/Geant4/G4GlobalConfig.hh \
- /usr/include/c++/8/complex \
+ /home/local1/Documents/g4sipm/sample/include/SteppingAction.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4UserSteppingAction.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Step.hh /usr/include/c++/8/cstdlib \
  /usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
  /usr/include/bits/wordsize.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
@@ -15,22 +11,13 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/bits/long-double.h /usr/include/gnu/stubs.h \
  /usr/include/gnu/stubs-64.h \
  /usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
- /usr/include/c++/8/bits/cpp_type_traits.h \
- /usr/include/c++/8/ext/type_traits.h /usr/include/c++/8/cmath \
- /usr/include/math.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
- /usr/include/bits/iscanonical.h /usr/include/c++/8/bits/std_abs.h \
- /usr/include/stdlib.h \
+ /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \
+ /usr/include/sys/types.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/types/clock_t.h \
  /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \
  /usr/include/bits/types/timer_t.h /usr/include/bits/stdint-intn.h \
  /usr/include/endian.h /usr/include/bits/endian.h \
@@ -41,7 +28,15 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
  /usr/include/bits/pthreadtypes-arch.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/8/bits/specfun.h \
+ /usr/include/bits/stdlib-float.h /usr/include/c++/8/bits/std_abs.h \
+ /usr/include/c++/8/cmath /usr/include/c++/8/bits/cpp_type_traits.h \
+ /usr/include/c++/8/ext/type_traits.h /usr/include/math.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/8/bits/specfun.h \
  /usr/include/c++/8/bits/stl_algobase.h \
  /usr/include/c++/8/bits/functexcept.h \
  /usr/include/c++/8/bits/exception_defines.h \
@@ -66,7 +61,11 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/c++/8/tr1/modified_bessel_func.tcc \
  /usr/include/c++/8/tr1/poly_hermite.tcc \
  /usr/include/c++/8/tr1/poly_laguerre.tcc \
- /usr/include/c++/8/tr1/riemann_zeta.tcc /usr/include/c++/8/sstream \
+ /usr/include/c++/8/tr1/riemann_zeta.tcc \
+ /softs/geant4.11.1.2/include/Geant4/G4ios.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Types.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4GlobalConfig.hh \
+ /usr/include/c++/8/complex /usr/include/c++/8/sstream \
  /usr/include/c++/8/istream /usr/include/c++/8/ios \
  /usr/include/c++/8/iosfwd /usr/include/c++/8/bits/stringfwd.h \
  /usr/include/c++/8/bits/memoryfwd.h /usr/include/c++/8/bits/postypes.h \
@@ -113,9 +112,9 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/c++/8/bits/alloc_traits.h /usr/include/c++/8/string_view \
  /usr/include/c++/8/bits/functional_hash.h \
  /usr/include/c++/8/bits/string_view.tcc \
- /usr/include/c++/8/ext/string_conversions.h /usr/include/c++/8/cstdlib \
- /usr/include/c++/8/cstdio /usr/include/stdio.h \
- /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
+ /usr/include/c++/8/ext/string_conversions.h /usr/include/c++/8/cstdio \
+ /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
+ /usr/include/bits/types/__fpos64_t.h \
  /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
@@ -140,8 +139,19 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/c++/8/bits/ostream.tcc /usr/include/c++/8/bits/istream.tcc \
  /usr/include/c++/8/bits/sstream.tcc \
  /softs/geant4.11.1.2/include/Geant4/tls.hh /usr/include/c++/8/iostream \
- /usr/include/c++/8/algorithm /usr/include/c++/8/utility \
- /usr/include/c++/8/bits/stl_relops.h /usr/include/c++/8/bits/stl_algo.h \
+ /usr/include/c++/8/iomanip /usr/include/c++/8/locale \
+ /usr/include/c++/8/bits/locale_facets_nonio.h /usr/include/c++/8/ctime \
+ /usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h \
+ /usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/8/bits/codecvt.h \
+ /usr/include/c++/8/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/8/bits/locale_conv.h \
+ /usr/include/c++/8/bits/unique_ptr.h /usr/include/c++/8/utility \
+ /usr/include/c++/8/bits/stl_relops.h /usr/include/c++/8/tuple \
+ /usr/include/c++/8/array /usr/include/c++/8/bits/uses_allocator.h \
+ /usr/include/c++/8/bits/invoke.h /usr/include/c++/8/bits/quoted_string.h \
+ /softs/geant4.11.1.2/include/Geant4/globals.hh \
+ /usr/include/c++/8/algorithm /usr/include/c++/8/bits/stl_algo.h \
  /usr/include/c++/8/bits/algorithmfwd.h \
  /usr/include/c++/8/bits/stl_heap.h /usr/include/c++/8/bits/stl_tempbuf.h \
  /usr/include/c++/8/bits/stl_construct.h \
@@ -160,16 +170,6 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4Exception.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ExceptionSeverity.hh \
  /softs/geant4.11.1.2/include/Geant4/G4EnvironmentUtils.hh \
- /usr/include/c++/8/iomanip /usr/include/c++/8/locale \
- /usr/include/c++/8/bits/locale_facets_nonio.h /usr/include/c++/8/ctime \
- /usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h \
- /usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/8/bits/codecvt.h \
- /usr/include/c++/8/bits/locale_facets_nonio.tcc \
- /usr/include/c++/8/bits/locale_conv.h \
- /usr/include/c++/8/bits/unique_ptr.h /usr/include/c++/8/tuple \
- /usr/include/c++/8/array /usr/include/c++/8/bits/uses_allocator.h \
- /usr/include/c++/8/bits/invoke.h /usr/include/c++/8/bits/quoted_string.h \
  /usr/include/c++/8/map /usr/include/c++/8/bits/stl_tree.h \
  /usr/include/c++/8/ext/aligned_buffer.h \
  /usr/include/c++/8/bits/node_handle.h /usr/include/c++/8/optional \
@@ -178,11 +178,13 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/c++/8/mutex /usr/include/c++/8/chrono \
  /usr/include/c++/8/ratio /usr/include/c++/8/bits/parse_numbers.h \
  /usr/include/c++/8/bits/std_mutex.h \
+ /softs/geant4.11.1.2/include/Geant4/G4ThreeVector.hh \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/ThreeVector.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/defs.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/ThreeVector.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4VPhysicalVolume.hh \
+ /softs/geant4.11.1.2/include/Geant4/geomdefs.hh \
  /softs/geant4.11.1.2/include/Geant4/G4RotationMatrix.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ThreeVector.hh \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/Rotation.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/RotationInterfaces.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/LorentzVector.h \
@@ -201,9 +203,6 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/RotationZ.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/RotationZ.icc \
  /softs/clhep/2.4.6.2/include/CLHEP/Vector/Rotation.icc \
- /softs/geant4.11.1.2/include/Geant4/G4VPhysicalVolume.hh \
- /softs/geant4.11.1.2/include/Geant4/geomdefs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4RotationMatrix.hh \
  /softs/geant4.11.1.2/include/Geant4/G4GeomSplitter.hh \
  /softs/geant4.11.1.2/include/Geant4/geomwdefs.hh \
  /softs/geant4.11.1.2/include/Geant4/G4AutoLock.hh \
@@ -226,18 +225,16 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /usr/include/c++/8/bits/stl_vector.h \
  /usr/include/c++/8/bits/stl_bvector.h /usr/include/c++/8/bits/vector.tcc \
  /softs/geant4.11.1.2/include/Geant4/G4VPhysicalVolume.icc \
- /softs/geant4.11.1.2/include/Geant4/G4VUserDetectorConstruction.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/G4Sipm.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/Placeable.hh \
- /softs/geant4.11.1.2/include/Geant4/globals.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalVolume.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Region.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Region.icc \
- /softs/geant4.11.1.2/include/Geant4/G4VPhysicalVolume.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalVolume.icc \
- /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmModel.hh \
- /softs/clhep/2.4.6.2/include/CLHEP/Vector/TwoVector.h \
- /softs/clhep/2.4.6.2/include/CLHEP/Vector/TwoVector.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4StepPoint.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Allocator.hh \
+ /usr/include/c++/8/cstddef \
+ /softs/geant4.11.1.2/include/Geant4/G4AllocatorPool.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4SteppingControl.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4StepStatus.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4TouchableHandle.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VTouchable.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VTouchable.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4ReferenceCountedHandle.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Material.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Element.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Isotope.hh \
@@ -265,70 +262,12 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4DataVector.icc \
  /usr/include/assert.h \
  /softs/geant4.11.1.2/include/Geant4/G4MaterialTable.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/G4SipmCellId.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmGainMapModel.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmVoltageTraceModel.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/housing/G4SipmHousing.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.hh \
- /softs/geant4.11.1.2/include/Geant4/graphics_reps_defs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Colour.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Color.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VisAttributes.icc \
- /softs/geant4.11.1.2/include/Geant4/G4Color.hh \
- /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Physics2DVector.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Physics2DVector.icc \
- /softs/geant4.11.1.2/include/Geant4/G4SurfaceProperty.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SurfaceProperty.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Box.hh \
- /softs/geant4.11.1.2/include/Geant4/G4GeomTypes.hh \
- /softs/geant4.11.1.2/include/Geant4/G4GeomConfig.hh \
- /softs/geant4.11.1.2/include/Geant4/G4CSGSolid.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VSolid.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VSolid.icc \
- /softs/geant4.11.1.2/include/Geant4/G4Polyhedron.hh \
- /softs/geant4.11.1.2/include/Geant4/HepPolyhedron.h \
- /softs/geant4.11.1.2/include/Geant4/G4TwoVector.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Point3D.hh \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/Point3D.h \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/defs.h \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/BasicVector3D.h \
- /softs/geant4.11.1.2/include/Geant4/G4Normal3D.hh \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/Normal3D.h \
- /softs/geant4.11.1.2/include/Geant4/G4Transform3D.hh \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/Transform3D.h \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/Transform3D.icc \
- /softs/clhep/2.4.6.2/include/CLHEP/Geometry/Vector3D.h \
- /softs/geant4.11.1.2/include/Geant4/G4Visible.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Visible.icc \
- /softs/geant4.11.1.2/include/Geant4/G4Box.icc \
- /softs/geant4.11.1.2/include/Geant4/G4Tubs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Tubs.icc \
- /softs/geant4.11.1.2/include/Geant4/G4PVPlacement.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/MaterialFactory.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmModelFactory.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmModel.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/housing/impl/HamamatsuCeramicHousing.hh \
- /home/local1/Documents/g4sipm/g4sipm/include/housing/impl/HamamatsuSmdHousing.hh \
- /softs/geant4.11.1.2/include/Geant4/G4RunManager.hh \
- /usr/include/c++/8/list /usr/include/c++/8/bits/stl_list.h \
- /usr/include/c++/8/bits/list.tcc \
- /softs/geant4.11.1.2/include/Geant4/rundefs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Event.hh \
- /softs/geant4.11.1.2/include/Geant4/evtdefs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Allocator.hh \
- /usr/include/c++/8/cstddef \
- /softs/geant4.11.1.2/include/Geant4/G4AllocatorPool.hh \
- /softs/geant4.11.1.2/include/Geant4/G4PrimaryVertex.hh \
- /softs/geant4.11.1.2/include/Geant4/pwdefs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4PrimaryParticle.hh \
- /softs/geant4.11.1.2/include/Geant4/G4HCofThisEvent.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VHitsCollection.hh \
- /softs/geant4.11.1.2/include/Geant4/G4DCofThisEvent.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VDigiCollection.hh \
- /softs/geant4.11.1.2/include/Geant4/G4TrajectoryContainer.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VTrajectory.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VUserEventInformation.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalVolume.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Region.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Region.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4LogicalVolume.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4StepPoint.icc \
+ /softs/geant4.11.1.2/include/Geant4/G4TrackVector.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Profiler.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Profiler.icc \
  /usr/include/c++/8/functional /usr/include/c++/8/unordered_map \
@@ -340,47 +279,26 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/PTL/Utility.hh \
  /usr/include/c++/8/set /usr/include/c++/8/bits/stl_set.h \
  /usr/include/c++/8/bits/stl_multiset.h \
- /softs/geant4.11.1.2/include/Geant4/G4EventManager.hh \
- /softs/geant4.11.1.2/include/Geant4/G4StackManager.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UserStackingAction.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ClassificationOfNewTrack.hh \
- /softs/geant4.11.1.2/include/Geant4/G4StackedTrack.hh \
- /softs/geant4.11.1.2/include/Geant4/G4TrackStack.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SmartTrackStack.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Step.icc \
  /softs/geant4.11.1.2/include/Geant4/G4Track.hh \
  /softs/geant4.11.1.2/include/Geant4/trkdefs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalVolume.hh \
  /softs/geant4.11.1.2/include/Geant4/G4DynamicParticle.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ParticleDefinition.hh \
  /softs/geant4.11.1.2/include/Geant4/G4PDefManager.hh \
  /usr/include/c++/8/stdlib.h \
+ /softs/geant4.11.1.2/include/Geant4/pwdefs.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ParticleDefinition.icc \
  /softs/geant4.11.1.2/include/Geant4/G4LorentzVector.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ParticleMomentum.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ElectronOccupancy.hh \
  /softs/geant4.11.1.2/include/Geant4/G4DynamicParticle.icc \
  /softs/geant4.11.1.2/include/Geant4/G4TrackStatus.hh \
- /softs/geant4.11.1.2/include/Geant4/G4TouchableHandle.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VTouchable.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VTouchable.icc \
- /softs/geant4.11.1.2/include/Geant4/G4ReferenceCountedHandle.hh \
  /softs/geant4.11.1.2/include/Geant4/G4VUserTrackInformation.hh \
  /softs/geant4.11.1.2/include/Geant4/G4PhysicsModelCatalog.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Material.hh \
  /softs/geant4.11.1.2/include/Geant4/G4Track.icc \
  /softs/geant4.11.1.2/include/Geant4/G4Step.hh \
- /softs/geant4.11.1.2/include/Geant4/G4StepPoint.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SteppingControl.hh \
- /softs/geant4.11.1.2/include/Geant4/G4StepStatus.hh \
- /softs/geant4.11.1.2/include/Geant4/G4StepPoint.icc \
- /softs/geant4.11.1.2/include/Geant4/G4TrackVector.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Step.icc \
- /softs/geant4.11.1.2/include/Geant4/G4PrimaryTransformer.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ParticleTable.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ParticleTableIterator.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ParticleTable.icc \
- /softs/geant4.11.1.2/include/Geant4/G4TrackingManager.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SteppingManager.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Track.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VProcess.hh \
  /softs/geant4.11.1.2/include/Geant4/Randomize.hh \
  /softs/clhep/2.4.6.2/include/CLHEP/Random/Randomize.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Random/defs.h \
@@ -443,49 +361,6 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/clhep/2.4.6.2/include/CLHEP/Random/RandSkewNormal.icc \
  /softs/clhep/2.4.6.2/include/CLHEP/Random/RandStudentT.h \
  /softs/clhep/2.4.6.2/include/CLHEP/Random/RandStudentT.icc \
- /softs/geant4.11.1.2/include/Geant4/G4Navigator.hh \
- /softs/geant4.11.1.2/include/Geant4/G4AffineTransform.hh \
- /softs/geant4.11.1.2/include/Geant4/G4AffineTransform.icc \
- /softs/geant4.11.1.2/include/Geant4/G4GRSVolume.hh \
- /softs/geant4.11.1.2/include/Geant4/G4GRSVolume.icc \
- /softs/geant4.11.1.2/include/Geant4/G4GRSSolid.hh \
- /softs/geant4.11.1.2/include/Geant4/G4GRSSolid.icc \
- /softs/geant4.11.1.2/include/Geant4/G4TouchableHistoryHandle.hh \
- /softs/geant4.11.1.2/include/Geant4/G4TouchableHistory.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationHistory.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationLevel.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationLevelRep.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationLevelRep.icc \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationLevel.icc \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationHistoryPool.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationHistory.icc \
- /softs/geant4.11.1.2/include/Geant4/G4TouchableHistory.icc \
- /softs/geant4.11.1.2/include/Geant4/G4NormalNavigation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4AuxiliaryNavServices.hh \
- /softs/geant4.11.1.2/include/Geant4/G4AuxiliaryNavServices.icc \
- /softs/geant4.11.1.2/include/Geant4/G4NormalNavigation.icc \
- /softs/geant4.11.1.2/include/Geant4/G4VoxelNavigation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NavigationLogger.hh \
- /softs/geant4.11.1.2/include/Geant4/G4BlockingList.hh \
- /softs/geant4.11.1.2/include/Geant4/G4BlockingList.icc \
- /softs/geant4.11.1.2/include/Geant4/G4SmartVoxelProxy.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SmartVoxelProxy.icc \
- /softs/geant4.11.1.2/include/Geant4/G4SmartVoxelNode.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SmartVoxelNode.icc \
- /softs/geant4.11.1.2/include/Geant4/G4SmartVoxelHeader.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SmartVoxelHeader.icc \
- /softs/geant4.11.1.2/include/Geant4/G4VoxelNavigation.icc \
- /softs/geant4.11.1.2/include/Geant4/G4ParameterisedNavigation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VPVParameterisation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VVolumeMaterialScanner.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ParameterisedNavigation.icc \
- /softs/geant4.11.1.2/include/Geant4/G4ReplicaNavigation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ReplicaNavigation.icc \
- /softs/geant4.11.1.2/include/Geant4/G4RegularNavigation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VExternalNavigation.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Navigator.icc \
- /softs/geant4.11.1.2/include/Geant4/G4ProcessManager.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VProcess.hh \
  /softs/geant4.11.1.2/include/Geant4/G4PhysicsTable.hh \
  /softs/geant4.11.1.2/include/Geant4/G4PhysicsTable.icc \
  /softs/geant4.11.1.2/include/Geant4/G4VParticleChange.hh \
@@ -495,44 +370,4 @@ sample/CMakeFiles/g4sipm_sample.dir/src/DetectorConstruction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4ParticleChange.hh \
  /softs/geant4.11.1.2/include/Geant4/G4ParticleChange.icc \
  /softs/geant4.11.1.2/include/Geant4/G4ProcessType.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ProcessVector.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ProcessVector.icc \
- /softs/geant4.11.1.2/include/Geant4/G4ProcessManager.icc \
- /softs/geant4.11.1.2/include/Geant4/G4NoProcess.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UserSteppingAction.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VSteppingVerbose.hh \
- /softs/geant4.11.1.2/include/Geant4/trkgdefs.hh \
- /softs/geant4.11.1.2/include/Geant4/G4TrackingMessenger.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UImessenger.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UIdirectory.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UIcommand.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UIparameter.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UItokenNum.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ApplicationState.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UserTrackingAction.hh \
- /softs/geant4.11.1.2/include/Geant4/G4RunManagerKernel.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NistManager.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NistElementBuilder.hh \
- /softs/geant4.11.1.2/include/Geant4/G4NistMaterialBuilder.hh \
- /softs/geant4.11.1.2/include/Geant4/G4ICRU90StoppingData.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Pow.hh \
- /softs/geant4.11.1.2/include/Geant4/G4Exp.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalSkinSurface.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalSurface.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalSurface.icc \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalSkinSurface.icc \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalBorderSurface.hh \
- /softs/geant4.11.1.2/include/Geant4/G4LogicalBorderSurface.icc \
- /home/local1/Documents/g4sipm/sample/include/Sensor.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VSensitiveDetector.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VHit.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VReadOutGeometry.hh \
- /softs/geant4.11.1.2/include/Geant4/G4SensitiveVolumeList.hh \
- /softs/geant4.11.1.2/include/Geant4/G4CollectionNameVector.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VSDFilter.hh \
- /softs/geant4.11.1.2/include/Geant4/G4OpBoundaryProcess.hh \
- /softs/geant4.11.1.2/include/Geant4/G4OpticalPhoton.hh \
- /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
- /softs/geant4.11.1.2/include/Geant4/G4RandomTools.hh \
- /softs/geant4.11.1.2/include/Geant4/G4RandomDirection.hh \
- /softs/geant4.11.1.2/include/Geant4/G4VDiscreteProcess.hh
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalPhoton.hh

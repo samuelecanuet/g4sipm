@@ -167,10 +167,38 @@ sample/CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.s"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/local1/Documents/g4sipm/sample/src/RunAction.cc -o CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.s
 
+sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
+sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o: ../sample/src/Sensor.cc
+sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o"
+	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o -c /home/local1/Documents/g4sipm/sample/src/Sensor.cc
+
+sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.i"
+	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/local1/Documents/g4sipm/sample/src/Sensor.cc > CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.i
+
+sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.s"
+	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/local1/Documents/g4sipm/sample/src/Sensor.cc -o CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.s
+
+sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
+sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o: ../sample/src/SteppingAction.cc
+sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o"
+	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o -c /home/local1/Documents/g4sipm/sample/src/SteppingAction.cc
+
+sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.i"
+	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/local1/Documents/g4sipm/sample/src/SteppingAction.cc > CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.i
+
+sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.s"
+	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/local1/Documents/g4sipm/sample/src/SteppingAction.cc -o CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.s
+
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o: ../sample/src/rnd/Direction.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o -c /home/local1/Documents/g4sipm/sample/src/rnd/Direction.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.i: cmake_force
@@ -184,7 +212,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.s: cmake_force
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o: ../sample/src/rnd/FixedValue.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o -c /home/local1/Documents/g4sipm/sample/src/rnd/FixedValue.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.i: cmake_force
@@ -198,7 +226,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.s: cmake_force
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o: ../sample/src/rnd/Flat.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o -c /home/local1/Documents/g4sipm/sample/src/rnd/Flat.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.i: cmake_force
@@ -212,7 +240,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.s: cmake_force
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o: ../sample/src/rnd/General.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.o -c /home/local1/Documents/g4sipm/sample/src/rnd/General.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.i: cmake_force
@@ -226,7 +254,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/rnd/General.cc.s: cmake_force
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o: ../sample/src/rnd/Random.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.o -c /home/local1/Documents/g4sipm/sample/src/rnd/Random.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.i: cmake_force
@@ -240,7 +268,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Random.cc.s: cmake_force
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o: ../sample/src/rnd/ThreeVector.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.o -c /home/local1/Documents/g4sipm/sample/src/rnd/ThreeVector.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.i: cmake_force
@@ -254,7 +282,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/rnd/ThreeVector.cc.s: cmake_force
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o: ../sample/src/persistency/PersistencyHandler.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/PersistencyHandler.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.i: cmake_force
@@ -268,7 +296,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandler.cc.s: cma
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o: ../sample/src/persistency/PersistencyHandlerMessenger.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/PersistencyHandlerMessenger.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.cc.i: cmake_force
@@ -282,7 +310,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistencyHandlerMessenger.
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o: ../sample/src/persistency/PersistVisitor.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/PersistVisitor.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.i: cmake_force
@@ -296,7 +324,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.s: cmake_f
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o: ../sample/src/persistency/PersistVisitorFactory.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/PersistVisitorFactory.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.i: cmake_force
@@ -310,7 +338,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.s: 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o: ../sample/src/persistency/JsonPersistVisitor.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/JsonPersistVisitor.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.i: cmake_force
@@ -324,7 +352,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.s: cma
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o: ../sample/src/persistency/RootPersistVisitor.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/RootPersistVisitor.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.i: cmake_force
@@ -338,7 +366,7 @@ sample/CMakeFiles/g4sipm_sample.dir/src/persistency/RootPersistVisitor.cc.s: cma
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/flags.make
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o: ../sample/src/persistency/SqlitePersistVisitor.cc
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o: sample/CMakeFiles/g4sipm_sample.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o"
 	cd /home/local1/Documents/g4sipm/build/sample && /bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o -MF CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o.d -o CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.o -c /home/local1/Documents/g4sipm/sample/src/persistency/SqlitePersistVisitor.cc
 
 sample/CMakeFiles/g4sipm_sample.dir/src/persistency/SqlitePersistVisitor.cc.i: cmake_force
@@ -358,6 +386,8 @@ g4sipm_sample_OBJECTS = \
 "CMakeFiles/g4sipm_sample.dir/src/ParticleSourceMessenger.cc.o" \
 "CMakeFiles/g4sipm_sample.dir/src/ProgramOptionsUtil.cc.o" \
 "CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.o" \
+"CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o" \
+"CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o" \
 "CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o" \
 "CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o" \
 "CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o" \
@@ -382,6 +412,8 @@ sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/ParticleSour
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/ParticleSourceMessenger.cc.o
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/ProgramOptionsUtil.cc.o
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.o
+sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o
+sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Direction.cc.o
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/rnd/FixedValue.cc.o
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/src/rnd/Flat.cc.o
@@ -464,7 +496,7 @@ sample/libg4sipm_sample.so: /usr/local/clhep/2.4.6.2/lib/libCLHEP-2.4.6.2.so
 sample/libg4sipm_sample.so: /softs/geant4.11.1.2/lib64/libG4zlib.so
 sample/libg4sipm_sample.so: /softs/geant4.11.1.2/lib64/libG4ptl.so.2.3.3
 sample/libg4sipm_sample.so: sample/CMakeFiles/g4sipm_sample.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX shared library libg4sipm_sample.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local1/Documents/g4sipm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX shared library libg4sipm_sample.so"
 	cd /home/local1/Documents/g4sipm/build/sample && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/g4sipm_sample.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

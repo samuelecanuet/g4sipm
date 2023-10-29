@@ -409,6 +409,54 @@ src/RunAction.cc.s:
 	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.s
 .PHONY : src/RunAction.cc.s
 
+src/Sensor.o: src/Sensor.cc.o
+.PHONY : src/Sensor.o
+
+# target to build an object file
+src/Sensor.cc.o:
+	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o
+.PHONY : src/Sensor.cc.o
+
+src/Sensor.i: src/Sensor.cc.i
+.PHONY : src/Sensor.i
+
+# target to preprocess a source file
+src/Sensor.cc.i:
+	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.i
+.PHONY : src/Sensor.cc.i
+
+src/Sensor.s: src/Sensor.cc.s
+.PHONY : src/Sensor.s
+
+# target to generate assembly for a file
+src/Sensor.cc.s:
+	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.s
+.PHONY : src/Sensor.cc.s
+
+src/SteppingAction.o: src/SteppingAction.cc.o
+.PHONY : src/SteppingAction.o
+
+# target to build an object file
+src/SteppingAction.cc.o:
+	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o
+.PHONY : src/SteppingAction.cc.o
+
+src/SteppingAction.i: src/SteppingAction.cc.i
+.PHONY : src/SteppingAction.i
+
+# target to preprocess a source file
+src/SteppingAction.cc.i:
+	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.i
+.PHONY : src/SteppingAction.cc.i
+
+src/SteppingAction.s: src/SteppingAction.cc.s
+.PHONY : src/SteppingAction.s
+
+# target to generate assembly for a file
+src/SteppingAction.cc.s:
+	cd /home/local1/Documents/g4sipm/build && $(MAKE) $(MAKESILENT) -f sample/CMakeFiles/g4sipm_sample.dir/build.make sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.s
+.PHONY : src/SteppingAction.cc.s
+
 src/persistency/JsonPersistVisitor.o: src/persistency/JsonPersistVisitor.cc.o
 .PHONY : src/persistency/JsonPersistVisitor.o
 
@@ -785,6 +833,12 @@ help:
 	@echo "... src/RunAction.o"
 	@echo "... src/RunAction.i"
 	@echo "... src/RunAction.s"
+	@echo "... src/Sensor.o"
+	@echo "... src/Sensor.i"
+	@echo "... src/Sensor.s"
+	@echo "... src/SteppingAction.o"
+	@echo "... src/SteppingAction.i"
+	@echo "... src/SteppingAction.s"
 	@echo "... src/persistency/JsonPersistVisitor.o"
 	@echo "... src/persistency/JsonPersistVisitor.i"
 	@echo "... src/persistency/JsonPersistVisitor.s"

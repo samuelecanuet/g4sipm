@@ -943,4 +943,18 @@ sample/CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4TDigiCollection.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/digi/G4SipmVoltageTraceDigi.hh \
  /home/local1/Documents/g4sipm/g4sipm/include/model/G4SipmModel.hh \
- /home/local1/Documents/g4sipm/sample/include/persistency/PersistVisitorFactory.hh
+ /home/local1/Documents/g4sipm/sample/include/persistency/PersistVisitorFactory.hh \
+ /home/local1/Documents/g4sipm/sample/include/Sensor.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VSensitiveDetector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VHit.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VReadOutGeometry.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4SensitiveVolumeList.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4CollectionNameVector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VSDFilter.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpBoundaryProcess.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalPhoton.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4RandomTools.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4RandomDirection.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4TwoVector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VDiscreteProcess.hh

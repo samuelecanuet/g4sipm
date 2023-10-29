@@ -1440,4 +1440,19 @@ sample/CMakeFiles/sample.dir/sample.cc.o: \
  /softs/geant4.11.1.2/include/Geant4/G4UIcmdWith3VectorAndUnit.hh \
  /softs/geant4.11.1.2/include/Geant4/G4UIcmdWith3Vector.hh \
  /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithAString.hh \
- /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithABool.hh
+ /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithABool.hh \
+ /home/local1/Documents/g4sipm/sample/include/SteppingAction.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4UserSteppingAction.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4Step.hh \
+ /home/local1/Documents/g4sipm/sample/include/Sensor.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VSensitiveDetector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VReadOutGeometry.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4SensitiveVolumeList.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4CollectionNameVector.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VSDFilter.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpBoundaryProcess.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalPhoton.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4RandomTools.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4RandomDirection.hh \
+ /softs/geant4.11.1.2/include/Geant4/G4VDiscreteProcess.hh

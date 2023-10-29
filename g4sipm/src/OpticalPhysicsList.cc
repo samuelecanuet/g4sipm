@@ -16,7 +16,10 @@
 OpticalPhysicsList::OpticalPhysicsList(int verbose, std::vector<G4OpticalProcessIndex> deactivate) {
 	G4OpticalPhysics* phys = new G4OpticalPhysics(verbose);
 	G4VPhysicsConstructor *emPhysicsList = new G4EmStandardPhysics(verbose);
+	
 	auto params = G4OpticalParameters::Instance();
+	params->SetCerenkovTrackSecondariesFirst(false);
+	params->SetScintTrackSecondariesFirst(false);
 	// Deactivate processes
 	for (std::vector<G4OpticalProcessIndex>::iterator it = deactivate.begin(); it != deactivate.end(); it++) {
 		//phys->Configure(*it, false);

@@ -16,6 +16,8 @@
 #include "persistency/PersistencyHandler.hh"
 #include "persistency/PersistVisitorFactory.hh"
 
+#include "Sensor.hh"
+
 RunAction::RunAction(std::string _filename) :
 		G4UserRunAction(), filename(_filename) {
 	persistencyHandler = new PersistencyHandler(PersistVisitorFactory::getInstance()->create(filename));

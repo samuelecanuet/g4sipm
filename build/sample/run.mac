@@ -1,7 +1,7 @@
 # Verbosity.
 /control/verbose 0
 /run/verbose 0
-/tracking/verbose 0
+/tracking/verbose 1
 
 # Generate events.
 /run/printProgress 1

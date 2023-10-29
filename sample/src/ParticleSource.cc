@@ -107,9 +107,11 @@ void ParticleSource::GeneratePrimaries(G4Event* event) {
 		particleGun->SetNumberOfParticles(1);
 		particleGun->SetParticleDefinition(G4Positron::Definition());
 		// Dice time.
-		particleGun->SetParticleTime(time->shoot());
+		double timed  = time->shoot();
+		particleGun->SetParticleTime(timed);
 		// Dice energy.
-		particleGun->SetParticleEnergy(energy->shoot());
+		double energy1 = energy->shoot();
+		particleGun->SetParticleEnergy(energy1);
 		// Dice position.
 		particleGun->SetParticlePosition(transformToSourcePlane(position->shoot()) + messenger->getPos());
 		particleGun->SetParticleMomentumDirection(transformToSourcePlane(momentum->shoot()));
@@ -118,6 +120,8 @@ void ParticleSource::GeneratePrimaries(G4Event* event) {
 				getPolarizationVector(polar->shoot(), particleGun->GetParticleMomentumDirection()));
 		// Fire!
 		particleGun->GeneratePrimaryVertex(event);
+		G4cout<<timed/CLHEP::ns<<"ns"<<G4endl;
+		G4cout<<energy1/CLHEP::keV<<"keV"<<G4endl;
 	}
 	// Cleanup
 	delete position;

@@ -15,6 +15,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/local1/Documents/g4sipm/sample/src/ParticleSourceMessenger.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/ParticleSourceMessenger.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/ParticleSourceMessenger.cc.o.d"
   "/home/local1/Documents/g4sipm/sample/src/ProgramOptionsUtil.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/ProgramOptionsUtil.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/ProgramOptionsUtil.cc.o.d"
   "/home/local1/Documents/g4sipm/sample/src/RunAction.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/RunAction.cc.o.d"
+  "/home/local1/Documents/g4sipm/sample/src/Sensor.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/Sensor.cc.o.d"
+  "/home/local1/Documents/g4sipm/sample/src/SteppingAction.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/SteppingAction.cc.o.d"
   "/home/local1/Documents/g4sipm/sample/src/persistency/JsonPersistVisitor.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/persistency/JsonPersistVisitor.cc.o.d"
   "/home/local1/Documents/g4sipm/sample/src/persistency/PersistVisitor.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitor.cc.o.d"
   "/home/local1/Documents/g4sipm/sample/src/persistency/PersistVisitorFactory.cc" "sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o" "gcc" "sample/CMakeFiles/g4sipm_sample.dir/src/persistency/PersistVisitorFactory.cc.o.d"

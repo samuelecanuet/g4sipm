@@ -65,6 +65,7 @@ void RootPersistVisitor::operator ()(G4SipmHitsCollection* hc) {
 		t->Fill();
 	}
 	file->WriteTObject(t);
+	delete t;
 }
 
 void RootPersistVisitor::operator ()(G4SipmDigiCollection* dc) {
@@ -93,6 +94,7 @@ void RootPersistVisitor::operator ()(G4SipmDigiCollection* dc) {
 		}
 	}
 	file->WriteTObject(t);
+	delete t;
 }
 
 void RootPersistVisitor::operator ()(G4SipmVoltageTraceDigiCollection* dc) {
@@ -118,6 +120,7 @@ void RootPersistVisitor::operator ()(G4SipmVoltageTraceDigiCollection* dc) {
 		}
 	}
 	file->WriteTObject(t);
+	delete t;
 }
 
 void RootPersistVisitor::close() {
@@ -160,6 +163,7 @@ void RootPersistVisitor::operator ()(G4SipmUiMessenger* m) {
 	t->Branch("shuntresistorRecoveryTime", &shuntresistorRecoveryTime);
 	t->Fill();
 	file->WriteTObject(t);
+	delete t;
 }
 
 void RootPersistVisitor::operator ()(ParticleSourceMessenger* m) {
@@ -202,6 +206,7 @@ void RootPersistVisitor::operator ()(ParticleSourceMessenger* m) {
 	t->Branch("pos[3]", pos);
 	t->Fill();
 	file->WriteTObject(t);
+	delete t;
 }
 
 void RootPersistVisitor::operator ()(G4SipmModel* m) {
@@ -240,6 +245,7 @@ void RootPersistVisitor::operator ()(G4SipmModel* m) {
 	t->Branch("deadTime", &deadTime);
 	t->Fill();
 	file->WriteTObject(t);
+	delete t;
 }
 
 void RootPersistVisitor::operator ()(G4SipmVoltageTraceModel* m) {
@@ -258,6 +264,7 @@ void RootPersistVisitor::operator ()(G4SipmVoltageTraceModel* m) {
 	t->Branch("whiteNoiseSigma", &whiteNoiseSigma);
 	t->Fill();
 	file->WriteTObject(t);
+	delete t;
 }
 
 TFile* RootPersistVisitor::getFile() const {

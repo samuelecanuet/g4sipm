@@ -64,6 +64,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
 			}
 		}
 	}
+	
 	timer.Stop();
 	std::cout << "EventAction::EndOfEventAction(): persist time (" << timer << ")." << std::endl;
 }

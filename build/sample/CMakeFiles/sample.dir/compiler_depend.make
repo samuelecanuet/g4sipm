@@ -1633,8 +1633,31 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
   /softs/geant4.11.1.2/include/Geant4/G4UIcmdWith3VectorAndUnit.hh \
   /softs/geant4.11.1.2/include/Geant4/G4UIcmdWith3Vector.hh \
   /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithAString.hh \
-  /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithABool.hh
+  /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithABool.hh \
+  ../sample/include/SteppingAction.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4UserSteppingAction.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4Step.hh \
+  ../sample/include/Sensor.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4VSensitiveDetector.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4VReadOutGeometry.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4SensitiveVolumeList.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4CollectionNameVector.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4VSDFilter.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4OpBoundaryProcess.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4OpticalPhoton.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4OpticalSurface.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4RandomTools.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4RandomDirection.hh \
+  /softs/geant4.11.1.2/include/Geant4/G4VDiscreteProcess.hh
 
+
+/softs/geant4.11.1.2/include/Geant4/G4RandomTools.hh:
+
+/softs/geant4.11.1.2/include/Geant4/G4SensitiveVolumeList.hh:
+
+/softs/geant4.11.1.2/include/Geant4/G4VReadOutGeometry.hh:
+
+/softs/geant4.11.1.2/include/Geant4/G4VSensitiveDetector.hh:
 
 /softs/geant4.11.1.2/include/Geant4/G4UIcmdWithABool.hh:
 
@@ -2598,6 +2621,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 
 /softs/geant4.11.1.2/include/Geant4/G4NavigationLevel.icc:
 
+../sample/include/SteppingAction.hh:
+
 /usr/include/boost/preprocessor/arithmetic/mod.hpp:
 
 /usr/include/c++/8/tr1/riemann_zeta.tcc:
@@ -2641,6 +2666,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 /softs/geant4.11.1.2/include/Geant4/G4VPhysicalVolume.hh:
 
 /usr/include/bits/getopt_posix.h:
+
+/softs/geant4.11.1.2/include/Geant4/G4CollectionNameVector.hh:
 
 /usr/include/boost/type_traits/is_integral.hpp:
 
@@ -2697,6 +2724,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 /usr/include/qt5/QtCore/qversiontagging.h:
 
 /usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h:
+
+/softs/geant4.11.1.2/include/Geant4/G4RandomDirection.hh:
 
 /usr/include/c++/8/string_view:
 
@@ -2934,6 +2963,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 
 /usr/include/gnu/stubs.h:
 
+/softs/geant4.11.1.2/include/Geant4/G4VDiscreteProcess.hh:
+
 /usr/include/boost/predef/architecture/convex.h:
 
 /usr/include/c++/8/bits/std_function.h:
@@ -2989,6 +3020,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 /usr/include/boost/preprocessor/seq/size.hpp:
 
 /usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h:
+
+/softs/geant4.11.1.2/include/Geant4/G4OpBoundaryProcess.hh:
 
 /usr/include/c++/8/bits/invoke.h:
 
@@ -3802,6 +3835,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 
 /usr/include/boost/mpl/list/aux_/empty.hpp:
 
+/softs/geant4.11.1.2/include/Geant4/G4VSDFilter.hh:
+
 /softs/geant4.11.1.2/include/Geant4/G4TrackStack.hh:
 
 /usr/include/boost/mpl/empty_fwd.hpp:
@@ -3969,6 +4004,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 /softs/clhep/2.4.6.2/include/CLHEP/Vector/RotationY.h:
 
 /softs/geant4.11.1.2/include/Geant4/G4NavigationHistory.icc:
+
+../sample/include/Sensor.hh:
 
 /usr/include/c++/8/ios:
 
@@ -4407,6 +4444,8 @@ sample/CMakeFiles/sample.dir/sample.cc.o: ../sample/sample.cc \
 /softs/geant4.11.1.2/include/Geant4/G4SteppingManager.hh:
 
 /softs/clhep/2.4.6.2/include/CLHEP/Random/RandStudentT.icc:
+
+/softs/geant4.11.1.2/include/Geant4/G4OpticalPhoton.hh:
 
 /softs/geant4.11.1.2/include/Geant4/Randomize.hh:
 

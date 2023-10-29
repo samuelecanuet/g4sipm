@@ -6,4 +6,4 @@
 /control/execute vis-settings.mac
 
 # Run.
-/run/beamOn 2
+/run/beamOn 1
